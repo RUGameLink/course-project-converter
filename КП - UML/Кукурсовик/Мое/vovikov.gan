@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?><project name="Untitled Gantt Project" company="" webLink="http://" view-date="2022-08-08" view-index="0" gantt-divider-location="351" resource-divider-location="300" version="3.2.3230" locale="ru_RU">
+    <description/>
+    <view zooming-state="default:7" id="gantt-chart">
+        <field id="tpd3" name="Название" width="200" order="0"/>
+        <field id="tpd4" name="Дата начала" width="75" order="1"/>
+        <field id="tpd5" name="Дата окончания" width="75" order="2"/>
+        <option id="filter.completedTasks" value="false"/>
+    </view>
+    <view id="resource-table">
+        <field id="0" name="Имя" width="210" order="0"/>
+        <field id="1" name="Стандартная роль" width="86" order="1"/>
+    </view>
+    <!-- -->
+    <calendars>
+        <day-types>
+            <day-type id="0"/>
+            <day-type id="1"/>
+            <default-week id="1" name="default" sun="1" mon="0" tue="0" wed="0" thu="0" fri="0" sat="1"/>
+            <only-show-weekends value="false"/>
+            <overriden-day-types/>
+            <days/>
+        </day-types>
+    </calendars>
+    <tasks empty-milestones="true">
+        <taskproperties>
+            <taskproperty id="tpd0" name="type" type="default" valuetype="icon"/>
+            <taskproperty id="tpd1" name="priority" type="default" valuetype="icon"/>
+            <taskproperty id="tpd2" name="info" type="default" valuetype="icon"/>
+            <taskproperty id="tpd3" name="name" type="default" valuetype="text"/>
+            <taskproperty id="tpd4" name="begindate" type="default" valuetype="date"/>
+            <taskproperty id="tpd5" name="enddate" type="default" valuetype="date"/>
+            <taskproperty id="tpd6" name="duration" type="default" valuetype="int"/>
+            <taskproperty id="tpd7" name="completion" type="default" valuetype="int"/>
+            <taskproperty id="tpd8" name="coordinator" type="default" valuetype="text"/>
+            <taskproperty id="tpd9" name="predecessorsr" type="default" valuetype="text"/>
+        </taskproperties>
+        <task id="0" name="Выбор языка программирования и подходящей среды для разработки." color="#8cb6ce" meeting="false" start="2022-09-01" duration="7" complete="0" thirdDate="2022-11-09" thirdDate-constraint="0" expand="true">
+            <depend id="1" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="1" name="Разработка ядра программного компонента." color="#8cb6ce" meeting="false" start="2022-09-12" duration="35" complete="0" thirdDate="2022-08-29" thirdDate-constraint="0" expand="true">
+            <depend id="2" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="2" name="Разработка базового графического интерфейса приложения." color="#8cb6ce" meeting="false" start="2022-10-31" duration="10" complete="0" thirdDate="2022-08-22" thirdDate-constraint="0" expand="true">
+            <depend id="3" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="3" name="Разработка модуля выбора места нахождения файла и пути для сохранения результата." color="#8cb6ce" meeting="false" start="2022-11-14" duration="15" complete="0" thirdDate="2022-08-22" thirdDate-constraint="0" expand="true">
+            <depend id="4" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="4" name="Разработка расширенного графического интерфейса с возможностью выбора местоположения файла и пути для сохранения." color="#8cb6ce" meeting="false" start="2022-12-05" duration="5" complete="0" thirdDate="2022-08-22" thirdDate-constraint="0" expand="true">
+            <depend id="5" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="5" name="Тестирование программ¬ного продукта и составление программной документации." color="#8cb6ce" meeting="false" start="2022-12-12" duration="10" complete="0" thirdDate="2022-08-22" thirdDate-constraint="0" expand="true"/>
+    </tasks>
+    <resources/>
+    <allocations/>
+    <vacations/>
+    <previous/>
+    <roles roleset-name="Default"/>
+</project>
