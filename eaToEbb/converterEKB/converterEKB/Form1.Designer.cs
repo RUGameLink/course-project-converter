@@ -34,6 +34,7 @@
             this.convertProgress = new System.Windows.Forms.ProgressBar();
             this.fileLabel = new System.Windows.Forms.Label();
             this.pathLabel = new System.Windows.Forms.Label();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.SuspendLayout();
             // 
             // selectFileBtn
@@ -44,6 +45,7 @@
             this.selectFileBtn.TabIndex = 0;
             this.selectFileBtn.Text = "Загрузить файл";
             this.selectFileBtn.UseVisualStyleBackColor = true;
+            this.selectFileBtn.Click += new System.EventHandler(this.selectFileBtn_Click);
             // 
             // selectPathBtn
             // 
@@ -53,6 +55,7 @@
             this.selectPathBtn.TabIndex = 1;
             this.selectPathBtn.Text = "Указать директорию \nдля сохранения";
             this.selectPathBtn.UseVisualStyleBackColor = true;
+            this.selectPathBtn.Click += new System.EventHandler(this.selectPathBtn_Click);
             // 
             // convertBtn
             // 
@@ -76,9 +79,8 @@
             this.fileLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(126)))), ((int)(((byte)(37)))));
             this.fileLabel.Location = new System.Drawing.Point(162, 74);
             this.fileLabel.Name = "fileLabel";
-            this.fileLabel.Size = new System.Drawing.Size(133, 13);
+            this.fileLabel.Size = new System.Drawing.Size(0, 13);
             this.fileLabel.TabIndex = 4;
-            this.fileLabel.Text = "Файл успешно загружен";
             // 
             // pathLabel
             // 
@@ -86,9 +88,12 @@
             this.pathLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.pathLabel.Location = new System.Drawing.Point(162, 164);
             this.pathLabel.Name = "pathLabel";
-            this.pathLabel.Size = new System.Drawing.Size(149, 26);
+            this.pathLabel.Size = new System.Drawing.Size(0, 13);
             this.pathLabel.TabIndex = 5;
-            this.pathLabel.Text = "Ошибка выбора \nдиректории для сохранения";
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
             // 
             // Form1
             // 
@@ -116,6 +121,7 @@
         private System.Windows.Forms.ProgressBar convertProgress;
         private System.Windows.Forms.Label fileLabel;
         private System.Windows.Forms.Label pathLabel;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
     }
 }
 

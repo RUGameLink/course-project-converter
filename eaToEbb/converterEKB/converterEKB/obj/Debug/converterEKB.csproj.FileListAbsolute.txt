@@ -1,0 +1,11 @@
+D:\.git\course-project-converter\eaToEbb\converterEKB\converterEKB\bin\Debug\converterEKB.exe.config
+D:\.git\course-project-converter\eaToEbb\converterEKB\converterEKB\bin\Debug\converterEKB.exe
+D:\.git\course-project-converter\eaToEbb\converterEKB\converterEKB\bin\Debug\converterEKB.pdb
+D:\.git\course-project-converter\eaToEbb\converterEKB\converterEKB\obj\Debug\converterEKB.csproj.AssemblyReference.cache
+D:\.git\course-project-converter\eaToEbb\converterEKB\converterEKB\obj\Debug\converterEKB.csproj.SuggestedBindingRedirects.cache
+D:\.git\course-project-converter\eaToEbb\converterEKB\converterEKB\obj\Debug\converterEKB.Form1.resources
+D:\.git\course-project-converter\eaToEbb\converterEKB\converterEKB\obj\Debug\converterEKB.Properties.Resources.resources
+D:\.git\course-project-converter\eaToEbb\converterEKB\converterEKB\obj\Debug\converterEKB.csproj.GenerateResource.cache
+D:\.git\course-project-converter\eaToEbb\converterEKB\converterEKB\obj\Debug\converterEKB.csproj.CoreCompileInputs.cache
+D:\.git\course-project-converter\eaToEbb\converterEKB\converterEKB\obj\Debug\converterEKB.exe
+D:\.git\course-project-converter\eaToEbb\converterEKB\converterEKB\obj\Debug\converterEKB.pdb
