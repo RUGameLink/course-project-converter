@@ -13,12 +13,12 @@ namespace converterEKB
 {
     public partial class Form1 : Form
     {
-        string filename;
-        string pathToDid;
+        string filename; //Путь к файлу
+        string pathToDid; //Путь к директории
         public Form1()
         {
             InitializeComponent();
-            openFileDialog1.Filter = "Файл базы знаний (*.xml)|*.xml|All files(*.*)|*.*";
+            openFileDialog1.Filter = "Файл xml (*.xml)|*.xml|All files(*.*)|*.*";
             convertBtn.Enabled = false;
         }
 
@@ -29,13 +29,15 @@ namespace converterEKB
                 fileLabel.Text = "Ошибка загрузки файла!";
                 fileLabel.ForeColor = Color.Red;
                 filename = null;
-                checkToReady();
-                return;
             }
-            // получаем выбранный файл
-            filename = openFileDialog1.FileName;
-            fileLabel.Text = "Файл успешно загружен";
-            fileLabel.ForeColor = Color.Green;
+            else
+            {
+                // получаем выбранный файл
+                filename = openFileDialog1.FileName;
+                fileLabel.Text = "Файл успешно загружен";
+                fileLabel.ForeColor = Color.Green;
+
+            }
             checkToReady();
         }
 

@@ -9,3 +9,14 @@ D:\.git\course-project-converter\eaToEbb\swrlToEkb\swrlToEkb\obj\Debug\swrlToEkb
 D:\.git\course-project-converter\eaToEbb\swrlToEkb\swrlToEkb\obj\Debug\swrlToEkb.csproj.CoreCompileInputs.cache
 D:\.git\course-project-converter\eaToEbb\swrlToEkb\swrlToEkb\obj\Debug\swrlToEkb.exe
 D:\.git\course-project-converter\eaToEbb\swrlToEkb\swrlToEkb\obj\Debug\swrlToEkb.pdb
+D:\.git\course-project-converter\apps\swrlToEkb\swrlToEkb\bin\Debug\swrlToEkb.exe.config
+D:\.git\course-project-converter\apps\swrlToEkb\swrlToEkb\bin\Debug\swrlToEkb.exe
+D:\.git\course-project-converter\apps\swrlToEkb\swrlToEkb\bin\Debug\swrlToEkb.pdb
+D:\.git\course-project-converter\apps\swrlToEkb\swrlToEkb\obj\Debug\swrlToEkb.csproj.AssemblyReference.cache
+D:\.git\course-project-converter\apps\swrlToEkb\swrlToEkb\obj\Debug\swrlToEkb.csproj.SuggestedBindingRedirects.cache
+D:\.git\course-project-converter\apps\swrlToEkb\swrlToEkb\obj\Debug\swrlToEkb.Form1.resources
+D:\.git\course-project-converter\apps\swrlToEkb\swrlToEkb\obj\Debug\swrlToEkb.Properties.Resources.resources
+D:\.git\course-project-converter\apps\swrlToEkb\swrlToEkb\obj\Debug\swrlToEkb.csproj.GenerateResource.cache
+D:\.git\course-project-converter\apps\swrlToEkb\swrlToEkb\obj\Debug\swrlToEkb.csproj.CoreCompileInputs.cache
+D:\.git\course-project-converter\apps\swrlToEkb\swrlToEkb\obj\Debug\swrlToEkb.exe
+D:\.git\course-project-converter\apps\swrlToEkb\swrlToEkb\obj\Debug\swrlToEkb.pdb

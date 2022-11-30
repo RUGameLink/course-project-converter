@@ -9,3 +9,14 @@ D:\.git\course-project-converter\eaToEbb\rulemlToEkb\rulemlToEkb\obj\Debug\rulem
 D:\.git\course-project-converter\eaToEbb\rulemlToEkb\rulemlToEkb\obj\Debug\rulemlToEkb.csproj.CoreCompileInputs.cache
 D:\.git\course-project-converter\eaToEbb\rulemlToEkb\rulemlToEkb\obj\Debug\rulemlToEkb.exe
 D:\.git\course-project-converter\eaToEbb\rulemlToEkb\rulemlToEkb\obj\Debug\rulemlToEkb.pdb
+D:\.git\course-project-converter\apps\rulemlToEkb\rulemlToEkb\bin\Debug\rulemlToEkb.exe.config
+D:\.git\course-project-converter\apps\rulemlToEkb\rulemlToEkb\bin\Debug\rulemlToEkb.exe
+D:\.git\course-project-converter\apps\rulemlToEkb\rulemlToEkb\bin\Debug\rulemlToEkb.pdb
+D:\.git\course-project-converter\apps\rulemlToEkb\rulemlToEkb\obj\Debug\rulemlToEkb.csproj.AssemblyReference.cache
+D:\.git\course-project-converter\apps\rulemlToEkb\rulemlToEkb\obj\Debug\rulemlToEkb.csproj.SuggestedBindingRedirects.cache
+D:\.git\course-project-converter\apps\rulemlToEkb\rulemlToEkb\obj\Debug\rulemlToEkb.Form1.resources
+D:\.git\course-project-converter\apps\rulemlToEkb\rulemlToEkb\obj\Debug\rulemlToEkb.Properties.Resources.resources
+D:\.git\course-project-converter\apps\rulemlToEkb\rulemlToEkb\obj\Debug\rulemlToEkb.csproj.GenerateResource.cache
+D:\.git\course-project-converter\apps\rulemlToEkb\rulemlToEkb\obj\Debug\rulemlToEkb.csproj.CoreCompileInputs.cache
+D:\.git\course-project-converter\apps\rulemlToEkb\rulemlToEkb\obj\Debug\rulemlToEkb.exe
+D:\.git\course-project-converter\apps\rulemlToEkb\rulemlToEkb\obj\Debug\rulemlToEkb.pdb

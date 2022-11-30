@@ -35,6 +35,7 @@
             this.fileLbl = new System.Windows.Forms.Label();
             this.pathLbl = new System.Windows.Forms.Label();
             this.convertBtn = new System.Windows.Forms.Button();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -62,12 +63,14 @@
             this.loadFileBtn.Name = "loadFileBtn";
             this.loadFileBtn.Size = new System.Drawing.Size(225, 22);
             this.loadFileBtn.Text = "Загрузить файл";
+            this.loadFileBtn.Click += new System.EventHandler(this.loadFileBtn_Click);
             // 
             // saveFileBtn
             // 
             this.saveFileBtn.Name = "saveFileBtn";
             this.saveFileBtn.Size = new System.Drawing.Size(225, 22);
             this.saveFileBtn.Text = "Выбрать место сохранения";
+            this.saveFileBtn.Click += new System.EventHandler(this.saveFileBtn_Click);
             // 
             // fileLbl
             // 
@@ -75,9 +78,8 @@
             this.fileLbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(126)))), ((int)(((byte)(37)))));
             this.fileLbl.Location = new System.Drawing.Point(13, 82);
             this.fileLbl.Name = "fileLbl";
-            this.fileLbl.Size = new System.Drawing.Size(87, 13);
+            this.fileLbl.Size = new System.Drawing.Size(0, 13);
             this.fileLbl.TabIndex = 1;
-            this.fileLbl.Text = "Файл загружен";
             // 
             // pathLbl
             // 
@@ -85,9 +87,8 @@
             this.pathLbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.pathLbl.Location = new System.Drawing.Point(13, 113);
             this.pathLbl.Name = "pathLbl";
-            this.pathLbl.Size = new System.Drawing.Size(125, 26);
+            this.pathLbl.Size = new System.Drawing.Size(0, 13);
             this.pathLbl.TabIndex = 2;
-            this.pathLbl.Text = "Место для сохранения \nне установлено";
             // 
             // convertBtn
             // 
@@ -97,6 +98,10 @@
             this.convertBtn.TabIndex = 3;
             this.convertBtn.Text = "Конвертировать файл";
             this.convertBtn.UseVisualStyleBackColor = true;
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
             // 
             // Form1
             // 
@@ -126,6 +131,7 @@
         private System.Windows.Forms.Label fileLbl;
         private System.Windows.Forms.Label pathLbl;
         private System.Windows.Forms.Button convertBtn;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
     }
 }
 

@@ -33,6 +33,7 @@
             this.convertBtn = new System.Windows.Forms.Button();
             this.fileLbl = new System.Windows.Forms.Label();
             this.saveLbl = new System.Windows.Forms.Label();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.SuspendLayout();
             // 
             // fileBtn
@@ -43,6 +44,7 @@
             this.fileBtn.TabIndex = 0;
             this.fileBtn.Text = "Загрузить файл";
             this.fileBtn.UseVisualStyleBackColor = true;
+            this.fileBtn.Click += new System.EventHandler(this.fileBtn_Click);
             // 
             // saveBtn
             // 
@@ -52,6 +54,7 @@
             this.saveBtn.TabIndex = 1;
             this.saveBtn.Text = "Указать директорию \nдля сохранения";
             this.saveBtn.UseVisualStyleBackColor = true;
+            this.saveBtn.Click += new System.EventHandler(this.saveBtn_Click);
             // 
             // convertBtn
             // 
@@ -83,6 +86,10 @@
             this.saveLbl.Text = "Ошибка выбора \nдиректории для сохранения";
             this.saveLbl.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -107,6 +114,7 @@
         private System.Windows.Forms.Button convertBtn;
         private System.Windows.Forms.Label fileLbl;
         private System.Windows.Forms.Label saveLbl;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
     }
 }
 
