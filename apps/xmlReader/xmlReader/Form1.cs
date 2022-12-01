@@ -39,6 +39,7 @@ namespace xmlReader
 
                     string start = "";
                     string end = "";
+                    string typeText = "";
                     filename = openFileDialog1.FileName;
                     textXml.Text = filename;
                     XmlDocument xDoc = new XmlDocument();
@@ -63,23 +64,29 @@ namespace xmlReader
                                 var inside = childClasses.ChildNodes;
                                 var feature = inside.Item(1);
                                 var fields = feature.ChildNodes;
-                             //   MessageBox.Show(fields.ToString());
                                 for(int j = 0; j < fields.Count; j++)
                                 {
                                     var operation = fields[j];
                                     if(operation.Name == "UML:Attribute")
                                     {
-                                        attr += $"\r\n{operation.Attributes["name"].Value} {operation.Attributes["visibility"].Value}";
-                                    //    MessageBox.Show($"{attr} {func}");
+                                        var typeList = operation.ChildNodes;
+                                        var typeTemp = typeList.Item(2);
+                                        var type = typeTemp.ChildNodes;
+                                        for(int k = 0; k < type.Count; k++)
+                                        {
+                                            var typeAt = type.Item(k);
+                                            if (typeAt.Attributes["tag"].Value == "type")
+                                            {
+                                                typeText = typeAt.Attributes["value"].Value;
+                                            }
+                                        }
+                                        attr += $"\r\n{operation.Attributes["visibility"].Value} {typeText} {operation.Attributes["name"].Value} ";
                                     }
                                     if(operation.Name == "UML:Operation")
                                     {
                                         func += $"\r\n{operation.Attributes["name"].Value} {operation.Attributes["visibility"].Value}";
-                                    //    MessageBox.Show($"{attr} {func}");
                                     }
-                                 //   MessageBox.Show($"{attr} {func}");
                                 }
-                            //    MessageBox.Show("Я класс, сучка");
                                 var attribute = childClasses.Attributes["name"];
                                 if (attribute != null)
                                 {
@@ -88,16 +95,12 @@ namespace xmlReader
                                         $"Я класс {className}" +
                                     $"\r\nИмею поля {attr}" +
                                     $"\r\nИ функции {func}");
-                                    //MessageBox.Show($"Я класс {className}" +
-                                    //    $"\nИмею поля {attr}" +
-                                    //    $"\nИ функции {func}");
-                                    // Process the value here
                                 }
-                                
+                                attr = "";
+                                func = "";
                             }
                             else
                             {
-                                //   MessageBox.Show("Ебана, я ассоциация...");
                                 var inside = childClasses.ChildNodes;
                                 var feature = inside.Item(0);
                                 var deepInside = feature.ChildNodes;
@@ -113,32 +116,20 @@ namespace xmlReader
                                         end = links.Attributes["value"].Value;
                                     }
                                 }
-                            //    MessageBox.Show(feature.ToString());
-
-                                
                                 var attribute = childClasses.Attributes["name"];
                                 string assocName = attribute.Value;
-                               //MessageBox.Show($"Я ассоциация {assocName}" +
-                               //     $"\nИз класса {start}" +
-                               //         $"\nВ класс {end}");
-
                                 textXml.Text += ($"\r\n\r\n========\r\n\r\n" +
                                     $"Я ассоциация {assocName}" +
                                 $"\r\nИз класса {start}" +
                                 $"\r\nВ класс {end}");
-                                // Process the value here
-
                             }
-                            //MessageBox.Show(childClasses.Name);
-                            
                         }
-                        
                         Console.WriteLine("efefefef");
                     }
-                    
-
                 }
-                catch {}
+                catch(Exception ex) {
+                    MessageBox.Show(ex.Message);
+                }
             }
         }
     }
