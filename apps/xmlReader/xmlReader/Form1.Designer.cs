@@ -32,6 +32,7 @@
             this.reeadBtn = new System.Windows.Forms.Button();
             this.statusLbl = new System.Windows.Forms.Label();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.textList = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // textXml
@@ -65,11 +66,21 @@
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
+            // textList
+            // 
+            this.textList.Location = new System.Drawing.Point(517, 177);
+            this.textList.Multiline = true;
+            this.textList.Name = "textList";
+            this.textList.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.textList.Size = new System.Drawing.Size(277, 261);
+            this.textList.TabIndex = 3;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.textList);
             this.Controls.Add(this.statusLbl);
             this.Controls.Add(this.reeadBtn);
             this.Controls.Add(this.textXml);
@@ -86,6 +97,7 @@
         private System.Windows.Forms.Button reeadBtn;
         private System.Windows.Forms.Label statusLbl;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.TextBox textList;
     }
 }
 

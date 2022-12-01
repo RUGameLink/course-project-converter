@@ -15,11 +15,14 @@ namespace xmlReader
     public partial class Form1 : Form
     {
         string filename; //Путь к файлу
-        string test;
+        List<EA> eAs;
+        List<Association> associations;
         public Form1()
         {
             InitializeComponent();
             openFileDialog1.Filter = "Файл xml (*.xml)|*.xml|All files(*.*)|*.*";
+            eAs= new List<EA>();
+            associations= new List<Association>();
         }
 
         private void reeadBtn_Click(object sender, EventArgs e)
@@ -40,6 +43,10 @@ namespace xmlReader
                     string start = "";
                     string end = "";
                     string typeText = "";
+
+                    List<(string, string, string, string)> Attribute = new List<(string, string, string, string)>();
+                    List<(string, string, string, string)> Operation = new List<(string, string, string, string)>();
+
                     filename = openFileDialog1.FileName;
                     textXml.Text = filename;
                     XmlDocument xDoc = new XmlDocument();
@@ -58,6 +65,8 @@ namespace xmlReader
                         var classes = ownedElementClasses.ChildNodes;
                         for(int i = 0; i < classes.Count; i++)
                         {
+                            Operation.Clear();
+                            Attribute.Clear();
                             var childClasses = classes.Item(i);
                             if (childClasses.Name == "UML:Class")
                             {
@@ -81,10 +90,27 @@ namespace xmlReader
                                             }
                                         }
                                         attr += $"\r\n{operation.Attributes["visibility"].Value} {typeText} {operation.Attributes["name"].Value} ";
+                                        Attribute.Add(("attribute", operation.Attributes["visibility"].Value, 
+                                            typeText, 
+                                            operation.Attributes["name"].Value));
                                     }
                                     if(operation.Name == "UML:Operation")
                                     {
-                                        func += $"\r\n{operation.Attributes["name"].Value} {operation.Attributes["visibility"].Value}";
+                                        var typeList = operation.ChildNodes;
+                                        var typeTemp = typeList.Item(0);
+                                        var type = typeTemp.ChildNodes;
+                                        for (int k = 0; k < type.Count; k++)
+                                        {
+                                            var typeAt = type.Item(k);
+                                            if (typeAt.Attributes["tag"].Value == "type")
+                                            {
+                                                typeText = typeAt.Attributes["value"].Value;
+                                            }
+                                        }
+                                        func += $"\r\n{operation.Attributes["visibility"].Value} {typeText} {operation.Attributes["name"].Value}";
+                                        Operation.Add(("operation", operation.Attributes["visibility"].Value,
+                                            typeText,
+                                            operation.Attributes["name"].Value));
                                     }
                                 }
                                 var attribute = childClasses.Attributes["name"];
@@ -95,9 +121,13 @@ namespace xmlReader
                                         $"Я класс {className}" +
                                     $"\r\nИмею поля {attr}" +
                                     $"\r\nИ функции {func}");
+
+                                    eAs.Add(new EA(className, Attribute, Operation));
+
                                 }
                                 attr = "";
                                 func = "";
+
                             }
                             else
                             {
@@ -122,9 +152,39 @@ namespace xmlReader
                                     $"Я ассоциация {assocName}" +
                                 $"\r\nИз класса {start}" +
                                 $"\r\nВ класс {end}");
+                                associations.Add(new Association(assocName, start, end));
                             }
                         }
                         Console.WriteLine("efefefef");
+
+                        int l = 0;
+                        int p = 0;
+                        while(l < eAs.Count)
+                        {
+                            p = 0;
+                            textList.Text += $"\r\n==========\r\n" +
+                            $"\r\n{eAs[l].ClassName}";
+                            while(p < eAs[l].Attribute.Count)
+                            {
+                                textList.Text += $"\r\n{eAs[l].Attribute[p]}" +
+                                $"\r\n{eAs[l].Operation[p]}";
+
+                                p++;
+                            }
+                            
+                            l++;
+                            statusLbl.Text = l.ToString();
+                        }
+                        int q = 0;
+                        while(q < associations.Count)
+                        {
+                            textList.Text += $"\r\n==========\r\n" +
+                                $"{associations[q].AssotionName}" +
+                                $"\r\n{associations[q].SourceName}" +
+                                $"\r\n{associations[q].TargetName}";
+                            q++;
+                        }
+
                     }
                 }
                 catch(Exception ex) {
