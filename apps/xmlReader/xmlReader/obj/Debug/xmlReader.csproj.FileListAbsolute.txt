@@ -1,0 +1,11 @@
+D:\.git\course-project-converter\apps\xmlReader\xmlReader\bin\Debug\xmlReader.exe.config
+D:\.git\course-project-converter\apps\xmlReader\xmlReader\bin\Debug\xmlReader.exe
+D:\.git\course-project-converter\apps\xmlReader\xmlReader\bin\Debug\xmlReader.pdb
+D:\.git\course-project-converter\apps\xmlReader\xmlReader\obj\Debug\xmlReader.csproj.AssemblyReference.cache
+D:\.git\course-project-converter\apps\xmlReader\xmlReader\obj\Debug\xmlReader.csproj.SuggestedBindingRedirects.cache
+D:\.git\course-project-converter\apps\xmlReader\xmlReader\obj\Debug\xmlReader.Form1.resources
+D:\.git\course-project-converter\apps\xmlReader\xmlReader\obj\Debug\xmlReader.Properties.Resources.resources
+D:\.git\course-project-converter\apps\xmlReader\xmlReader\obj\Debug\xmlReader.csproj.GenerateResource.cache
+D:\.git\course-project-converter\apps\xmlReader\xmlReader\obj\Debug\xmlReader.csproj.CoreCompileInputs.cache
+D:\.git\course-project-converter\apps\xmlReader\xmlReader\obj\Debug\xmlReader.exe
+D:\.git\course-project-converter\apps\xmlReader\xmlReader\obj\Debug\xmlReader.pdb
