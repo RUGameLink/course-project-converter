@@ -96,16 +96,22 @@ namespace xmlReader
                                 //   MessageBox.Show("Ебана, я ассоциация...");
                                 var inside = childClasses.ChildNodes;
                                 var feature = inside.Item(0);
-
-
-                                if (feature.Attributes["tag"].Value == "ea_sourceName")
+                                var deepInside = feature.ChildNodes;
+                                for(int k = 0; k < deepInside.Count; k++)
                                 {
-                                    start = feature.Attributes["value"].Value;
+                                    var links = deepInside.Item(k);
+                                    if (links.Attributes["tag"].Value == "ea_sourceName")
+                                    {
+                                        start = links.Attributes["value"].Value;
+                                    }
+                                    if (links.Attributes["tag"].Value == "ea_targetName")
+                                    {
+                                        end = links.Attributes["value"].Value;
+                                    }
                                 }
-                                if (feature.Attributes["tag"].Value == "ea_targetName")
-                                {
-                                    end = feature.Attributes["value"].Value;
-                                }
+                            //    MessageBox.Show(feature.ToString());
+
+                                
                                 var attribute = childClasses.Attributes["name"];
                                 string assocName = attribute.Value;
                                MessageBox.Show($"Я ассоциация {assocName}" +
