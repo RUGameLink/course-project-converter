@@ -39,6 +39,7 @@
             this.textXml.Location = new System.Drawing.Point(12, 12);
             this.textXml.Multiline = true;
             this.textXml.Name = "textXml";
+            this.textXml.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.textXml.Size = new System.Drawing.Size(499, 426);
             this.textXml.TabIndex = 0;
             // 

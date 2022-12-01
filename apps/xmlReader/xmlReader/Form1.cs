@@ -69,12 +69,12 @@ namespace xmlReader
                                     var operation = fields[j];
                                     if(operation.Name == "UML:Attribute")
                                     {
-                                        attr += $"\n{operation.Attributes["name"].Value} {operation.Attributes["visibility"].Value}";
+                                        attr += $"\r\n{operation.Attributes["name"].Value} {operation.Attributes["visibility"].Value}";
                                     //    MessageBox.Show($"{attr} {func}");
                                     }
                                     if(operation.Name == "UML:Operation")
                                     {
-                                        func += $"\n{operation.Attributes["name"].Value} {operation.Attributes["visibility"].Value}";
+                                        func += $"\r\n{operation.Attributes["name"].Value} {operation.Attributes["visibility"].Value}";
                                     //    MessageBox.Show($"{attr} {func}");
                                     }
                                  //   MessageBox.Show($"{attr} {func}");
@@ -84,9 +84,13 @@ namespace xmlReader
                                 if (attribute != null)
                                 {
                                     string className = attribute.Value;
-                                    MessageBox.Show($"Я класс {className}" +
-                                        $"\nИмею поля {attr}" +
-                                        $"\nИ функции {func}");
+                                    textXml.Text += ($"\r\n\r\n========\r\n\r\n" +
+                                        $"Я класс {className}" +
+                                    $"\r\nИмею поля {attr}" +
+                                    $"\r\nИ функции {func}");
+                                    //MessageBox.Show($"Я класс {className}" +
+                                    //    $"\nИмею поля {attr}" +
+                                    //    $"\nИ функции {func}");
                                     // Process the value here
                                 }
                                 
@@ -114,11 +118,16 @@ namespace xmlReader
                                 
                                 var attribute = childClasses.Attributes["name"];
                                 string assocName = attribute.Value;
-                               MessageBox.Show($"Я ассоциация {assocName}" +
-                                    $"\nИз класса {start}" +
-                                        $"\nВ класс {end}");
-                        // Process the value here
-                    
+                               //MessageBox.Show($"Я ассоциация {assocName}" +
+                               //     $"\nИз класса {start}" +
+                               //         $"\nВ класс {end}");
+
+                                textXml.Text += ($"\r\n\r\n========\r\n\r\n" +
+                                    $"Я ассоциация {assocName}" +
+                                $"\r\nИз класса {start}" +
+                                $"\r\nВ класс {end}");
+                                // Process the value here
+
                             }
                             //MessageBox.Show(childClasses.Name);
                             
