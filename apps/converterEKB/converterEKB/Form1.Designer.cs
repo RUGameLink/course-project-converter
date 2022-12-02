@@ -35,6 +35,7 @@
             this.fileLabel = new System.Windows.Forms.Label();
             this.pathLabel = new System.Windows.Forms.Label();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.textList = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // selectFileBtn
@@ -65,6 +66,7 @@
             this.convertBtn.TabIndex = 2;
             this.convertBtn.Text = "Конвертировать файл";
             this.convertBtn.UseVisualStyleBackColor = true;
+            this.convertBtn.Click += new System.EventHandler(this.convertBtn_Click);
             // 
             // convertProgress
             // 
@@ -95,11 +97,21 @@
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
+            // textList
+            // 
+            this.textList.Location = new System.Drawing.Point(168, 12);
+            this.textList.Multiline = true;
+            this.textList.Name = "textList";
+            this.textList.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.textList.Size = new System.Drawing.Size(620, 303);
+            this.textList.TabIndex = 6;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.textList);
             this.Controls.Add(this.pathLabel);
             this.Controls.Add(this.fileLabel);
             this.Controls.Add(this.convertProgress);
@@ -122,6 +134,7 @@
         private System.Windows.Forms.Label fileLabel;
         private System.Windows.Forms.Label pathLabel;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.TextBox textList;
     }
 }
 
