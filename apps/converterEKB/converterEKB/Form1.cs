@@ -88,21 +88,29 @@ namespace converterEKB
         {
             parseTheFile();
             convertToEKB();
+            saveToEkb();
+        }
+
+        private void saveToEkb()
+        {
+            string path = $"{pathToDid}/file.ekb";
+            System.IO.File.WriteAllText(path, ekbText);
+            MessageBox.Show("Файл сохранен");
         }
 
         private void convertToEKB()
         {
             Random random= new Random();
             string id = $"{random.Next(1000000000)}{random.Next(100)}";
-            string header = $"<Structure>"
-                + $"\r\n\t<KnowledgeBase>"
-                + $"\r\n\t\t<ID>{id}</ID>"
-                + $"\r\n\t\t<Name>База знаний 1</Name>"
-                + $"\r\n\t\t<ShortName>Baza-znaniy-1</ShortName>"
-                + $"\r\n\t\t<Kind>0</Kind>"
-                + $"\r\n\t\t<Description></Description>"
-                + $"\r\n\t\t<Vars/>"
-                + $"\r\n\t\t<Templates>";
+            string header = $"\r\n<Structure>"
+                + $"\r\n<KnowledgeBase>"
+                + $"\r\n<ID>{id}</ID>"
+                + $"\r\n<Name>База знаний 1</Name>"
+                + $"\r\n<ShortName>Baza-znaniy-1</ShortName>"
+                + $"\r\n<Kind>0</Kind>"
+                + $"\r\n<Description></Description>"
+                + $"\r\n<Vars/>"
+                + $"\r\n<Templates>";
 
             string templates = "";
             string slots = "";
@@ -127,48 +135,49 @@ namespace converterEKB
                     idTempStr = "";
                     idTempStr = $"0{count}";
                 }
-                templates = $"<Template>" +
-                $"\r\n\t\t\t\t<ID>T{idTempStr}</ID>" +
-                $"\r\n\t\t\t\t<Name>{eAs[l].ClassName}</Name>" +
-                $"\r\n\t\t\t\t<ShortName>{eAs[l].ClassName}</ShortName>" +
-                $"\r\n\t\t\t\t<Description>Описание шаблона T{idTempStr}</Description>" +
-                $"\r\n\t\t\t\t<PackageName></PackageName>" +
-                $"\r\n\t\t\t\t<RootPackageName></RootPackageName>" +
-                $"\r\n\t\t\t\t<DrawParams>xT{idTempStr}=15" +
-                $"\r\n\t\t\t\tyT{idTempStr}=15" +
-                $"\r\n\t\t\t\tw=265" +
-                $"\r\n\t\t\t\th=65" +
-                $"\r\n\t\t\t\t</DrawParams>" +
-                $"\r\n\t\t\t\t<Slots>";
+                templates = $"\r\n<Template>" +
+                $"\r\n<ID>T{idTempStr}</ID>" +
+                $"\r\n<Name>{eAs[l].ClassName}</Name>" +
+                $"\r\n<ShortName>{eAs[l].ClassName}</ShortName>" +
+                $"\r\n<Description>Описание шаблона T{idTempStr}</Description>" +
+                $"\r\n<PackageName></PackageName>" +
+                $"\r\n<RootPackageName></RootPackageName>" +
+                $"\r\n<DrawParams>xT{idTempStr}=15" +
+                $"\r\nyT{idTempStr}=15" +
+                $"\r\nw=265" +
+                $"\r\nh=65" +
+                $"\r\n</DrawParams>" +
+                $"\r\n<Slots>";
                 int p = 0;
                 ekbText += templates;
                 while (p < eAs[l].Attribute.Count)
                 {
-                    textList.Text += $"\r\n{eAs[l].Attribute[p]}";
+                    textList.Text += $"{eAs[l].Attribute[p]}";
 
-                    slots = $"\r\n\t\t\t\t\t<Slot>" +
-                    $"\r\n\t\t\t\t\t\t<Name>{eAs[l].Attribute[p].Item3}</Name>" +
-                    $"\r\n\t\t\t\t\t\t<ShortName>{eAs[l].Attribute[p].Item3}</ShortName>" +
-                    $"\r\n\t\t\t\t\t\t<Description>{eAs[l].Attribute[p].Item3}</Description>" +
-                    $"\r\n\t\t\t\t\t\t<Value></Value>" +
-                    $"\r\n\t\t\t\t\t\t<DataType>{eAs[l].Attribute[p].Item2}</DataType>" +
-                    $"\r\n\t\t\t\t\t\t<Constraint></Constraint>" +
-                    $"\r\n\t\t\t\t\t</Slot>";
+                    slots = $"\r\n<Slot>" +
+                    $"\r\n<Name>{eAs[l].Attribute[p].Item3}</Name>" +
+                    $"\r\n<ShortName>{eAs[l].Attribute[p].Item3}</ShortName>" +
+                    $"\r\n<Description>{eAs[l].Attribute[p].Item3}</Description>" +
+                    $"\r\n<Value></Value>" +
+                    $"\r\n<DataType>{eAs[l].Attribute[p].Item2}</DataType>" +
+                    $"\r\n<Constraint></Constraint>" +
+                    $"\r\n</Slot>";
                     ekbText += slots;
                     p++;
                 }
 
-                templateEnd = $"\r\n\t\t\t</Template>";
+                templateEnd = $"\r\n</Slots>" +
+                    "\r\n</Template>";
                 ekbText += templateEnd;
                 l++;
                 count++;
             }
 
-            templatesEnd = templatesEnd = $"\r\n\t\t\t</Templates>";
+            templatesEnd = templatesEnd = $"\r\n</Templates>";
             ekbText += templatesEnd;
 
-            string facts = "\r\n\t\t\t<Facts/>" +
-            "\\t\\t<GRules>\"";
+            string facts = "\r\n<Facts/>" +
+            "\r\n<GRules>";
             ekbText += facts;
 
             int q = 0;
@@ -187,40 +196,40 @@ namespace converterEKB
                     idTempStr = $"0{count}";
                 }
                 grules =
-                    $"\r\n\t\t\t<GRule>" +
-                    $"\r\n\t\t\t\t<ID>G{idTempStr}</ID>" +
-                    $"\r\n\t\t\t\t<Name>{associations[q].AssotionName}</Name>" +
-                    $"\r\n\t\t\t\t<ShortName>{associations[q].AssotionName}</ShortName>" +
-                    $"\r\n\t\t\t\t<Description>{associations[q].AssotionName}</Description>" +
-                    $"\r\n\t\t\t\t<PackageName></PackageName>" +
-                    $"\r\n\t\t\t\t<RootPackageName></RootPackageName>" +
-                    $"\r\n\t\t\t\t<DrawParams>xG{idTempStr}=26" +
-                    $"\r\n\t\t\t\tyG{idTempStr}=105" +
-                    $"\r\n\t\t\t\tw=170" +
-                    $"\r\n\t\t\t\th=34" +
-                    $"\r\n\t\t\t\t</DrawParams>" +
-                    $"\r\n\t\t\t\t<Conditions>" +
-                    $"\r\n\t\t\t\t\t<C0>{associations[q].SourceName}</C0>" +
-                    $"\r\n\t\t\t\t</Conditions>" +
-                    $"\r\n\t\t\t\t<Actions>" +
-                    $"\r\n\t\t\t\t\t<A0>{associations[q].TargetName}</A0>" +
-                    $"\r\n\t\t\t\t</Actions>" +
-                    $"\r\n\t\t\t</GRule>";
+                    $"\r\n<GRule>" +
+                    $"\r\n<ID>G{idTempStr}</ID>" +
+                    $"\r\n<Name>{associations[q].AssotionName}</Name>" +
+                    $"\r\n<ShortName>{associations[q].AssotionName}</ShortName>" +
+                    $"\r\n<Description>{associations[q].AssotionName}</Description>" +
+                    $"\r\n<PackageName></PackageName>" +
+                    $"\r\n<RootPackageName></RootPackageName>" +
+                    $"\r\n<DrawParams>xG{idTempStr}=26" +
+                    $"\r\nyG{idTempStr}=105" +
+                    $"\r\nw=170" +
+                    $"\r\nh=34" +
+                    $"\r\n</DrawParams>" +
+                    $"\r\n<Conditions>" +
+                    $"\r\n<C0>{associations[q].SourceName}</C0>" +
+                    $"\r\n</Conditions>" +
+                    $"\r\n<Actions>" +
+                    $"\r\n<A0>{associations[q].TargetName}</A0>" +
+                    $"\r\n</Actions>" +
+                    $"\r\n</GRule>";
                     ekbText += grules;
                 q++;
                 count++;
             }
 
-            string ekbEnd = $"\t\t</GRules>" +
-                $"\r\n\t\t<Rules/>" +
-                $"\r\n\t\t<Functions/>" +
-                $"\r\n\t\t<Tasks/>" +
-                $"\r\n\t\t<FScales/>" +
-                $"\r\n\t\t<TempPackageList/>" +
-                $"\r\n\t\t<FactPackageList/>" +
-                $"\r\n\t\t<RulePackageList/>" +
-                $"\r\n\t\t<GRulePackageList/>" +
-                $"\r\n\t</KnowledgeBase>" +
+            string ekbEnd = $"\r\n</GRules>" +
+                $"\r\n<Rules/>" +
+                $"\r\n<Functions/>" +
+                $"\r\n<Tasks/>" +
+                $"\r\n<FScales/>" +
+                $"\r\n<TempPackageList/>" +
+                $"\r\n<FactPackageList/>" +
+                $"\r\n<RulePackageList/>" +
+                $"\r\n<GRulePackageList/>" +
+                $"\r\n</KnowledgeBase>" +
                 $"\r\n</Structure>";
 
             ekbText+= ekbEnd;

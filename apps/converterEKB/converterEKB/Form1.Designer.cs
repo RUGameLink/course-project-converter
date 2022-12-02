@@ -102,7 +102,7 @@
             this.textList.Location = new System.Drawing.Point(168, 12);
             this.textList.Multiline = true;
             this.textList.Name = "textList";
-            this.textList.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.textList.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.textList.Size = new System.Drawing.Size(620, 303);
             this.textList.TabIndex = 6;
             // 
