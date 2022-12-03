@@ -98,6 +98,7 @@
             this.convertBtn.TabIndex = 3;
             this.convertBtn.Text = "Конвертировать файл";
             this.convertBtn.UseVisualStyleBackColor = true;
+            this.convertBtn.Click += new System.EventHandler(this.convertBtn_Click);
             // 
             // openFileDialog1
             // 
