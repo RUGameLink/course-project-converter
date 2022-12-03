@@ -30,7 +30,7 @@
             <rel>atom</rel>
           </ind>
         </Atom>
-        <Atom node="#fact2">
+        <Atom node="#fact3">
           <op>
             <rel>EKB</rel>
           </op>
@@ -50,9 +50,11 @@
           <op>
             <rel>Association A</rel>
           </op>
-          <ind type="from">from<rel>Form1</rel>
+          <ind type="from">
+            <rel>Form1</rel>
           </ind>
-          <ind type="to">to<rel>EA</rel>
+          <ind type="to">
+            <rel>RuleLM</rel>
           </ind>
         </Atom>
         <Atom node="#rule2">
@@ -62,7 +64,7 @@
           <ind type="from">
             <rel>Form1</rel>
           </ind>
-          <ind type="Sto">
+          <ind type="to">
             <rel>EKB</rel>
           </ind>
         </Atom>

@@ -36,6 +36,7 @@
             this.pathLbl = new System.Windows.Forms.Label();
             this.convertBtn = new System.Windows.Forms.Button();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.textList = new System.Windows.Forms.TextBox();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -45,7 +46,7 @@
             this.файлToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(383, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1143, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -104,11 +105,21 @@
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
+            // textList
+            // 
+            this.textList.Location = new System.Drawing.Point(408, 28);
+            this.textList.Multiline = true;
+            this.textList.Name = "textList";
+            this.textList.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+            this.textList.Size = new System.Drawing.Size(712, 455);
+            this.textList.TabIndex = 4;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(383, 326);
+            this.ClientSize = new System.Drawing.Size(1143, 495);
+            this.Controls.Add(this.textList);
             this.Controls.Add(this.convertBtn);
             this.Controls.Add(this.pathLbl);
             this.Controls.Add(this.fileLbl);
@@ -133,6 +144,7 @@
         private System.Windows.Forms.Label pathLbl;
         private System.Windows.Forms.Button convertBtn;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.TextBox textList;
     }
 }
 
