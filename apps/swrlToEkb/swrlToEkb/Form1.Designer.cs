@@ -34,6 +34,7 @@
             this.fileLbl = new System.Windows.Forms.Label();
             this.saveLbl = new System.Windows.Forms.Label();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.textList = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // fileBtn
@@ -64,6 +65,7 @@
             this.convertBtn.TabIndex = 2;
             this.convertBtn.Text = "Конвертировать файл";
             this.convertBtn.UseVisualStyleBackColor = true;
+            this.convertBtn.Click += new System.EventHandler(this.convertBtn_Click);
             // 
             // fileLbl
             // 
@@ -71,9 +73,8 @@
             this.fileLbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(126)))), ((int)(((byte)(37)))));
             this.fileLbl.Location = new System.Drawing.Point(9, 67);
             this.fileLbl.Name = "fileLbl";
-            this.fileLbl.Size = new System.Drawing.Size(133, 13);
+            this.fileLbl.Size = new System.Drawing.Size(0, 13);
             this.fileLbl.TabIndex = 3;
-            this.fileLbl.Text = "Файл успешно загружен";
             // 
             // saveLbl
             // 
@@ -81,20 +82,29 @@
             this.saveLbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.saveLbl.Location = new System.Drawing.Point(179, 67);
             this.saveLbl.Name = "saveLbl";
-            this.saveLbl.Size = new System.Drawing.Size(149, 26);
+            this.saveLbl.Size = new System.Drawing.Size(0, 13);
             this.saveLbl.TabIndex = 4;
-            this.saveLbl.Text = "Ошибка выбора \nдиректории для сохранения";
             this.saveLbl.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // openFileDialog1
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
+            // textList
+            // 
+            this.textList.Location = new System.Drawing.Point(416, 12);
+            this.textList.Multiline = true;
+            this.textList.Name = "textList";
+            this.textList.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+            this.textList.Size = new System.Drawing.Size(565, 524);
+            this.textList.TabIndex = 5;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(365, 239);
+            this.ClientSize = new System.Drawing.Size(993, 548);
+            this.Controls.Add(this.textList);
             this.Controls.Add(this.saveLbl);
             this.Controls.Add(this.fileLbl);
             this.Controls.Add(this.convertBtn);
@@ -115,6 +125,7 @@
         private System.Windows.Forms.Label fileLbl;
         private System.Windows.Forms.Label saveLbl;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.TextBox textList;
     }
 }
 
