@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<rdf:RDF
+    xmlns:swrl="http://www.w3.org/2003/11/swrl#"
+    xmlns:ruleml="http://www.ruleml.org/1.0/xsd/datalog.xsd"
+    xmlns:protege="http://protege.stanford.edu/plugins/owl/protege#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#">
+  <owl:Ontology rdf:about="">
+    <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >version 1.3</owl:versionInfo>
+    <rdfs:comment xml:lang="en">This project was created for educational purposes for the implementation of the course project</rdfs:comment>
+    <owl:imports rdf:resource="http://protege.stanford.edu/plugins/owl/protege"/>
+    <protege:defaultLanguage rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >en</protege:defaultLanguage>
+  </owl:Ontology>
+  <owl:Classes>
+  <ruleml:Imp>
+    <ruleml:body rdf:parseType="Collection">
+      <swrl:individualPropertyAtom  swrl:property="Association A">
+        <ruleml:var>Form1</ruleml:var>
+        <ruleml:var>SWRL</ruleml:var>
+      </swrl:individualPropertyAtom>
+            <swrl:individualPropertyAtom  swrl:property="Association B">
+        <ruleml:var>Form1</ruleml:var>
+        <ruleml:var>EKB</ruleml:var>
+      </swrl:individualPropertyAtom>
+    </ruleml:body>
+  </ruleml:Imp>
+</rdf:RDF>

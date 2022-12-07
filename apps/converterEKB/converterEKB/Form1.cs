@@ -24,6 +24,8 @@ namespace converterEKB
 
         string ekbText = "";
 
+        bool status = false;
+
         public Form1()
         {
             InitializeComponent();
@@ -74,7 +76,7 @@ namespace converterEKB
 
         private void checkToReady()
         {
-            if(filename != null && pathToDid != null)
+            if (filename != null && pathToDid != null)
             {
                 convertBtn.Enabled = true;
             }
@@ -86,9 +88,20 @@ namespace converterEKB
 
         private void convertBtn_Click(object sender, EventArgs e)
         {
+            convertProgress.Value = 0;
             parseTheFile();
             convertToEKB();
-            saveToEkb();
+            if (status)
+            {
+                saveToEkb();
+                convertProgress.Value = 100;
+            }
+            else
+            {
+                convertProgress.Value = 0;
+                MessageBox.Show("Проверьте файл для конвертации.", "Произошла ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
         }
 
         private void saveToEkb()
@@ -100,7 +113,7 @@ namespace converterEKB
 
         private void convertToEKB()
         {
-            Random random= new Random();
+            Random random = new Random();
             string id = $"{random.Next(1000000000)}{random.Next(100)}";
             string header = $"\r\n<Structure>"
                 + $"\r\n<KnowledgeBase>"
@@ -125,7 +138,7 @@ namespace converterEKB
             while (l < eAs.Count)
             {
                 string idTempStr = "";
-                if(count < 10)
+                if (count < 10)
                 {
                     idTempStr = "";
                     idTempStr = $"00{count}";
@@ -152,8 +165,6 @@ namespace converterEKB
                 ekbText += templates;
                 while (p < eAs[l].Attribute.Count)
                 {
-                    textList.Text += $"{eAs[l].Attribute[p]}";
-
                     slots = $"\r\n<Slot>" +
                     $"\r\n<Name>{eAs[l].Attribute[p].Item3}</Name>" +
                     $"\r\n<ShortName>{eAs[l].Attribute[p].Item3}</ShortName>" +
@@ -215,7 +226,7 @@ namespace converterEKB
                     $"\r\n<A0>{associations[q].TargetName}</A0>" +
                     $"\r\n</Actions>" +
                     $"\r\n</GRule>";
-                    ekbText += grules;
+                ekbText += grules;
                 q++;
                 count++;
             }
@@ -232,8 +243,7 @@ namespace converterEKB
                 $"\r\n</KnowledgeBase>" +
                 $"\r\n</Structure>";
 
-            ekbText+= ekbEnd;
-            textList.Text = ekbText;
+            ekbText += ekbEnd;
         }
 
         private void parseTheFile()
@@ -247,18 +257,33 @@ namespace converterEKB
                 string end = "";
                 string typeText = "";
 
-                List<( string, string, string)> Attribute; 
+                List<(string, string, string)> Attribute;
 
                 filename = openFileDialog1.FileName;
 
                 XmlDocument xDoc = new XmlDocument();
-                xDoc.Load(filename);
+                try
+                {
+                    xDoc.Load(filename);
+                }
+                catch(System.Xml.XmlException ex)
+                {
+                    status = false;
+                    return;
+                }
                 XmlElement xRoot = xDoc.DocumentElement;
                 if (xRoot != null)
                 {
+
                     var child = xRoot.ChildNodes;
                     var content = child.Item(1);
+                    if (content == null)
+                    {
+                        status = false;
+                        return;
+                    }
                     var model = content.FirstChild;
+
                     var ownedElement = model.FirstChild;
                     var packagesTemp = ownedElement.ChildNodes;
                     var packages = packagesTemp.Item(1);
@@ -267,12 +292,17 @@ namespace converterEKB
                     var classes = ownedElementClasses.ChildNodes;
                     for (int i = 0; i < classes.Count; i++)
                     {
-                        Attribute = new List<( string, string, string)>();
+                        Attribute = new List<(string, string, string)>();
                         var childClasses = classes.Item(i);
                         if (childClasses.Name == "UML:Class")
                         {
                             var inside = childClasses.ChildNodes;
                             var feature = inside.Item(1);
+                            if(feature == null)
+                            {
+                                status = false;
+                                return;
+                            }
                             var fields = feature.ChildNodes;
                             for (int j = 0; j < fields.Count; j++)
                             {
@@ -291,7 +321,7 @@ namespace converterEKB
                                         }
                                     }
                                     attr += $"\r\n{operation.Attributes["visibility"].Value} {typeText} {operation.Attributes["name"].Value} ";
-                                    
+
                                     Attribute.Add((operation.Attributes["visibility"].Value,
                                         typeText,
                                         operation.Attributes["name"].Value));
@@ -307,7 +337,6 @@ namespace converterEKB
                             }
                             attr = "";
                             func = "";
-
                         }
                         else
                         {
@@ -331,40 +360,13 @@ namespace converterEKB
                             associations.Add(new Association(assocName, start, end));
                         }
                     }
-                    Console.WriteLine("efefefef");
-
-                    int l = 0;
-                    int p = 0;
-                    while (l < eAs.Count)
-                    {
-                        p = 0;
-                        textList.Text += $"\r\n==========\r\n" +
-                        $"\r\n{eAs[l].ClassName}";
-                        while (p < eAs[l].Attribute.Count)
-                        {
-                            textList.Text += $"\r\n{eAs[l].Attribute[p]}";
-
-                            p++;
-                        }
-
-                        l++;
-
-                    }
-                    int q = 0;
-                    while (q < associations.Count)
-                    {
-                        textList.Text += $"\r\n==========\r\n" +
-                            $"{associations[q].AssotionName}" +
-                            $"\r\n{associations[q].SourceName}" +
-                            $"\r\n{associations[q].TargetName}";
-                        q++;
-                    }
-
                 }
+                status = true;
             }
-            catch (Exception ex)
+            catch (System.NullReferenceException ex)
             {
-                MessageBox.Show(ex.Message);
+                status = false;
+                return;
             }
         }
     }

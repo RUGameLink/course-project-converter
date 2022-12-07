@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace swrlToEkb
 {
@@ -17,6 +18,7 @@ namespace swrlToEkb
         string filename; //Путь к файлу
         string pathToDid; //Путь к директории
         string ekbText = "";
+        bool status = false;
 
         List<SWRL> swrl;
         List<Association> associations;
@@ -102,6 +104,11 @@ namespace swrlToEkb
                 if (xRoot != null)
                 {
                     var child = xRoot.ChildNodes;
+                    if(child.Item(1) == null)
+                    {
+                        status = false; 
+                        return;
+                    }
                     var classes = child.Item(1).ChildNodes;
                     
                     for (int i = 0; i < classes.Count; i ++)
@@ -138,10 +145,12 @@ namespace swrlToEkb
                     Console.WriteLine("efefefef");
 
                 }
+                status = true;
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                status = false;
+                return;
             }
         }
 
@@ -207,8 +216,6 @@ namespace swrlToEkb
                 ekbText += templates;
                 while (p < swrl[l].Attribute.Count)
                 {
-                    textList.Text += $"{swrl[l].Attribute[p]}";
-
                     slots = $"\r\n<Slot>" +
                     $"\r\n<Name>{swrl[l].Attribute[p].Item2}</Name>" +
                     $"\r\n<ShortName>{swrl[l].Attribute[p].Item2}</ShortName>" +
@@ -288,9 +295,6 @@ namespace swrlToEkb
                 $"\r\n</Structure>";
 
             ekbText += ekbEnd;
-            textList.Text = ekbText;
-
-            textList.Text += $"\r\r\n{swrl.Count}";
         }
 
         private void convertBtn_Click(object sender, EventArgs e)
@@ -300,7 +304,14 @@ namespace swrlToEkb
 
             parseTheFile();
             convertToEKB();
-            saveToEkb();
+            if (status)
+            {
+                saveToEkb();
+            }
+            else
+            {
+                MessageBox.Show("Проверьте файл для конвертации.", "Произошла ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

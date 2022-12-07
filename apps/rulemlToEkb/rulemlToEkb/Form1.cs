@@ -11,6 +11,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace rulemlToEkb
 {
@@ -22,6 +23,8 @@ namespace rulemlToEkb
 
         List<RuleMl> ruleMl;
         List<Association> associations;
+
+        bool status = false;
 
         public Form1()
         {
@@ -89,7 +92,14 @@ namespace rulemlToEkb
 
             parseTheFile();
             convertToEKB();
-            saveToEkb();
+            if (status)
+            {
+                saveToEkb();
+            }
+            else
+            {
+                MessageBox.Show("Проверьте файл для конвертации.", "Произошла ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void parseTheFile()
@@ -114,6 +124,11 @@ namespace rulemlToEkb
                 {
                     var child = xRoot.ChildNodes;
                     var assert = child.Item(2);
+                    if(assert == null)
+                    {
+                        status = false;
+                        return;
+                    }
                     var imp = assert.FirstChild;
                     var _head = imp.FirstChild;
                     var atoms = _head.ChildNodes;
@@ -143,6 +158,10 @@ namespace rulemlToEkb
                     }
                     var bodyChilds = imp.ChildNodes;
                     var body = bodyChilds.Item(1);
+                    if(body == null){
+                        status = false;
+                        return;
+                    }
                     var bodyAtoms = body.ChildNodes;
                     for (int i = 0; i < bodyAtoms.Count; i++)
                     {
@@ -161,10 +180,11 @@ namespace rulemlToEkb
 
                     Console.WriteLine("efefefef");
                 }
+                status = true;
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                status= false;
             }
         }
 
@@ -230,8 +250,6 @@ namespace rulemlToEkb
                 ekbText += templates;
                 while (p < ruleMl[l].Attribute.Count)
                 {
-                    textList.Text += $"{ruleMl[l].Attribute[p]}";
-
                     slots = $"\r\n<Slot>" +
                     $"\r\n<Name>{ruleMl[l].Attribute[p].Item2}</Name>" +
                     $"\r\n<ShortName>{ruleMl[l].Attribute[p].Item2}</ShortName>" +
@@ -311,9 +329,6 @@ namespace rulemlToEkb
                 $"\r\n</Structure>";
 
             ekbText += ekbEnd;
-            textList.Text = ekbText;
-
-            textList.Text += $"\r\r\n{ruleMl.Count}";
         }
     }
 }

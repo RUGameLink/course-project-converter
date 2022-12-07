@@ -34,7 +34,6 @@
             this.fileLbl = new System.Windows.Forms.Label();
             this.saveLbl = new System.Windows.Forms.Label();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.textList = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // fileBtn
@@ -90,21 +89,11 @@
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
-            // textList
-            // 
-            this.textList.Location = new System.Drawing.Point(416, 12);
-            this.textList.Multiline = true;
-            this.textList.Name = "textList";
-            this.textList.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.textList.Size = new System.Drawing.Size(565, 524);
-            this.textList.TabIndex = 5;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(993, 548);
-            this.Controls.Add(this.textList);
+            this.ClientSize = new System.Drawing.Size(406, 251);
             this.Controls.Add(this.saveLbl);
             this.Controls.Add(this.fileLbl);
             this.Controls.Add(this.convertBtn);
@@ -125,7 +114,6 @@
         private System.Windows.Forms.Label fileLbl;
         private System.Windows.Forms.Label saveLbl;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
-        private System.Windows.Forms.TextBox textList;
     }
 }
 
