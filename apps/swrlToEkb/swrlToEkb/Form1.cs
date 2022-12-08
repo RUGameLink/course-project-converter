@@ -20,19 +20,20 @@ namespace swrlToEkb
         string ekbText = "";
         bool status = false;
 
+        //Листы объектов классов
         List<SWRL> swrl;
         List<Association> associations;
         public Form1()
         {
             InitializeComponent();
-            openFileDialog1.Filter = "Файл owl (*.owl)|*.owl|All files(*.*)|*.*";
+            openFileDialog1.Filter = "Файл owl (*.owl)|*.owl|All files(*.*)|*.*"; //Фильтр файлов
             convertBtn.Enabled = false;
 
             swrl = new List<SWRL>();
             associations = new List<Association>();
         }
 
-        private void fileBtn_Click(object sender, EventArgs e)
+        private void fileBtn_Click(object sender, EventArgs e) //Слушатель кнопки выбора файла
         {
             if (openFileDialog1.ShowDialog() == DialogResult.Cancel)
             {
@@ -51,7 +52,7 @@ namespace swrlToEkb
             checkToReady();
         }
 
-        private void saveBtn_Click(object sender, EventArgs e)
+        private void saveBtn_Click(object sender, EventArgs e) //Слушатель кнопки выбора директории
         {
             FolderBrowserDialog FBD = new FolderBrowserDialog();
             FBD.ShowNewFolderButton = false;
@@ -70,7 +71,7 @@ namespace swrlToEkb
             checkToReady();
         }
 
-        private void checkToReady()
+        private void checkToReady() //Метод проверки выбора директории и файла
         {
             if (filename != null && pathToDid != null)
             {
@@ -82,7 +83,7 @@ namespace swrlToEkb
             }
         }
 
-        private void parseTheFile()
+        private void parseTheFile() //Метод парсинга файла
         {
             try
             {
@@ -101,29 +102,27 @@ namespace swrlToEkb
                 XmlDocument xDoc = new XmlDocument();
                 xDoc.Load(filename);
                 XmlElement xRoot = xDoc.DocumentElement;
-                if (xRoot != null)
+                if (xRoot != null) //Проверка корня файла на пустоту
                 {
-                    var child = xRoot.ChildNodes;
-                    if(child.Item(1) == null)
+                    var child = xRoot.ChildNodes; //Начало парсинга
+                    if (child.Item(1) == null)
                     {
                         status = false; 
                         return;
                     }
                     var classes = child.Item(1).ChildNodes;
                     
-                    for (int i = 0; i < classes.Count; i ++)
+                    for (int i = 0; i < classes.Count; i ++) //Парсинг классов
                     {
                         Attribute = new List<(string, string)>();
                         var cl = classes[i];
                         className = cl.Attributes["rdf:ID"].Value;
-                    //    MessageBox.Show(className);
                         var classChildren = cl.ChildNodes;
-                        for(int j = 0; j < classChildren.Count; j++)
+                        for(int j = 0; j < classChildren.Count; j++) //Парсинг переменных
                         {
                             var attrib = classChildren[j];
                             typeText = attrib.Attributes["xml:type"].Value;
                             attr = attrib.InnerText;
-                            //   MessageBox.Show($"{typeText} {attr}");
                             Attribute.Add((typeText, attr));
                         }
                         swrl.Add(new SWRL(className, Attribute));
@@ -132,14 +131,13 @@ namespace swrlToEkb
                     var imp = child.Item(3).ChildNodes;
 
                     var assocChild = imp.Item(0).ChildNodes;
-                    for(int i = 0; i < assocChild.Count; i++)
+                    for(int i = 0; i < assocChild.Count; i++) //Парсинг связей классов
                     {
                         var assoc = assocChild[i];
                         assocName = assoc.Attributes["swrl:property"].Value;
                         var nodes = assoc.ChildNodes;
                         start = nodes.Item(0).InnerText;
                         end = nodes.Item(1).InnerText;
-                        //    MessageBox.Show($"{assocName} {start} {end}");
                         associations.Add(new Association(assocName, start, end));
                     }
                     Console.WriteLine("efefefef");
@@ -154,16 +152,16 @@ namespace swrlToEkb
             }
         }
 
-        private void saveToEkb()
+        private void saveToEkb() //Метод сохранения файла
         {
             string path = $"{pathToDid}/file.ekb";
             System.IO.File.WriteAllText(path, ekbText);
             MessageBox.Show("Файл сохранен");
         }
 
-        private void convertToEKB()
+        private void convertToEKB() //Метод преобразования файла в формат EKB
         {
-
+            //Заполнение шапки структуры
             Random random = new Random();
             string id = $"{random.Next(1000000000)}{random.Next(100)}";
             string header = $"\r\n<Structure>"
@@ -186,7 +184,7 @@ namespace swrlToEkb
 
             ekbText = header;
             int count = 1;
-            while (l < swrl.Count)
+            while (l < swrl.Count) //Заполнение конструкций классов
             {
                 string idTempStr = "";
                 if (count < 10)
@@ -214,7 +212,7 @@ namespace swrlToEkb
                 $"\r\n<Slots>";
                 int p = 0;
                 ekbText += templates;
-                while (p < swrl[l].Attribute.Count)
+                while (p < swrl[l].Attribute.Count) //Заполнение переменных класса
                 {
                     slots = $"\r\n<Slot>" +
                     $"\r\n<Name>{swrl[l].Attribute[p].Item2}</Name>" +
@@ -244,7 +242,7 @@ namespace swrlToEkb
 
             int q = 0;
             count = 1;
-            while (q < associations.Count)
+            while (q < associations.Count) //Заполнение связей
             {
                 string idTempStr = "";
                 if (count < 10)
@@ -281,7 +279,7 @@ namespace swrlToEkb
                 q++;
                 count++;
             }
-
+            //Заполнение конца файла
             string ekbEnd = $"\r\n</GRules>" +
                 $"\r\n<Rules/>" +
                 $"\r\n<Functions/>" +
@@ -297,7 +295,7 @@ namespace swrlToEkb
             ekbText += ekbEnd;
         }
 
-        private void convertBtn_Click(object sender, EventArgs e)
+        private void convertBtn_Click(object sender, EventArgs e) //Слушатель кнопки конвертации
         {
             associations.Clear();
             swrl.Clear();

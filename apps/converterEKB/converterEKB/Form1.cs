@@ -19,6 +19,7 @@ namespace converterEKB
         string filename; //Путь к файлу
         string pathToDid; //Путь к директории
 
+        //Листы для объектов классов и ассоциаций
         List<EA> eAs;
         List<Association> associations;
 
@@ -29,14 +30,14 @@ namespace converterEKB
         public Form1()
         {
             InitializeComponent();
-            openFileDialog1.Filter = "Файл xml (*.xml)|*.xml|All files(*.*)|*.*";
+            openFileDialog1.Filter = "Файл xml (*.xml)|*.xml|All files(*.*)|*.*"; //Инициализация фильтра загрузки файлов
             convertBtn.Enabled = false;
 
             eAs = new List<EA>();
             associations = new List<Association>();
         }
 
-        private void selectFileBtn_Click(object sender, EventArgs e)
+        private void selectFileBtn_Click(object sender, EventArgs e) //Слушатель кнопки выбора файлов
         {
             if (openFileDialog1.ShowDialog() == DialogResult.Cancel)
             {
@@ -55,7 +56,7 @@ namespace converterEKB
             checkToReady();
         }
 
-        private void selectPathBtn_Click(object sender, EventArgs e)
+        private void selectPathBtn_Click(object sender, EventArgs e) //Слушатель кнопки выбора директории
         {
             FolderBrowserDialog FBD = new FolderBrowserDialog();
             FBD.ShowNewFolderButton = false;
@@ -74,7 +75,7 @@ namespace converterEKB
             checkToReady();
         }
 
-        private void checkToReady()
+        private void checkToReady() //Метод проверки выбора файла и директории
         {
             if (filename != null && pathToDid != null)
             {
@@ -86,7 +87,7 @@ namespace converterEKB
             }
         }
 
-        private void convertBtn_Click(object sender, EventArgs e)
+        private void convertBtn_Click(object sender, EventArgs e) //Слушатель кнопки конвертации
         {
             convertProgress.Value = 0;
             parseTheFile();
@@ -104,17 +105,18 @@ namespace converterEKB
 
         }
 
-        private void saveToEkb()
+        private void saveToEkb() //Метод сохранения преобразованного файла
         {
             string path = $"{pathToDid}/file.ekb";
             System.IO.File.WriteAllText(path, ekbText);
             MessageBox.Show("Файл сохранен");
         }
 
-        private void convertToEKB()
+        private void convertToEKB() //Метод сборки полученных данных в формат структуры ekb
         {
             Random random = new Random();
             string id = $"{random.Next(1000000000)}{random.Next(100)}";
+            //Сборка шапки файла
             string header = $"\r\n<Structure>"
                 + $"\r\n<KnowledgeBase>"
                 + $"\r\n<ID>{id}</ID>"
@@ -135,7 +137,7 @@ namespace converterEKB
 
             ekbText = header;
             int count = 1;
-            while (l < eAs.Count)
+            while (l < eAs.Count) //Сборка классов
             {
                 string idTempStr = "";
                 if (count < 10)
@@ -163,7 +165,7 @@ namespace converterEKB
                 $"\r\n<Slots>";
                 int p = 0;
                 ekbText += templates;
-                while (p < eAs[l].Attribute.Count)
+                while (p < eAs[l].Attribute.Count) //Сборка полей классов
                 {
                     slots = $"\r\n<Slot>" +
                     $"\r\n<Name>{eAs[l].Attribute[p].Item3}</Name>" +
@@ -193,7 +195,7 @@ namespace converterEKB
 
             int q = 0;
             count = 1;
-            while (q < associations.Count)
+            while (q < associations.Count) //Сборка ассоциаций файлов
             {
                 string idTempStr = "";
                 if (count < 10)
@@ -246,7 +248,7 @@ namespace converterEKB
             ekbText += ekbEnd;
         }
 
-        private void parseTheFile()
+        private void parseTheFile() //Метод парсинга файла
         {
             try
             {
@@ -272,9 +274,9 @@ namespace converterEKB
                     return;
                 }
                 XmlElement xRoot = xDoc.DocumentElement;
-                if (xRoot != null)
+                if (xRoot != null) //Проверка на наличие корневой директории файла
                 {
-
+                    //Разбор дерева структуры
                     var child = xRoot.ChildNodes;
                     var content = child.Item(1);
                     if (content == null)
@@ -294,7 +296,7 @@ namespace converterEKB
                     {
                         Attribute = new List<(string, string, string)>();
                         var childClasses = classes.Item(i);
-                        if (childClasses.Name == "UML:Class")
+                        if (childClasses.Name == "UML:Class") //Получение классов
                         {
                             var inside = childClasses.ChildNodes;
                             var feature = inside.Item(1);
@@ -307,7 +309,7 @@ namespace converterEKB
                             for (int j = 0; j < fields.Count; j++)
                             {
                                 var operation = fields[j];
-                                if (operation.Name == "UML:Attribute")
+                                if (operation.Name == "UML:Attribute") //Поиск полей
                                 {
                                     var typeList = operation.ChildNodes;
                                     var typeTemp = typeList.Item(2);
@@ -332,7 +334,7 @@ namespace converterEKB
                             {
                                 string className = attribute.Value;
 
-                                eAs.Add(new EA(className, Attribute));
+                                eAs.Add(new EA(className, Attribute)); //Компановка класса в лист
 
                             }
                             attr = "";
@@ -343,7 +345,7 @@ namespace converterEKB
                             var inside = childClasses.ChildNodes;
                             var feature = inside.Item(0);
                             var deepInside = feature.ChildNodes;
-                            for (int k = 0; k < deepInside.Count; k++)
+                            for (int k = 0; k < deepInside.Count; k++) //Поиск ассоциаций
                             {
                                 var links = deepInside.Item(k);
                                 if (links.Attributes["tag"].Value == "ea_sourceName")
@@ -357,7 +359,7 @@ namespace converterEKB
                             }
                             var attribute = childClasses.Attributes["name"];
                             string assocName = attribute.Value;
-                            associations.Add(new Association(assocName, start, end));
+                            associations.Add(new Association(assocName, start, end)); //Компановка ассоциаций в лист
                         }
                     }
                 }

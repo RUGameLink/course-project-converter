@@ -21,6 +21,7 @@ namespace rulemlToEkb
         string pathToDid; //Путь к директории
         string ekbText = "";
 
+        //Листы объектов классов и ассоциаций
         List<RuleMl> ruleMl;
         List<Association> associations;
 
@@ -29,14 +30,14 @@ namespace rulemlToEkb
         public Form1()
         {
             InitializeComponent();
-            openFileDialog1.Filter = "Файл ruleml (*.ruleml)|*.ruleml|All files(*.*)|*.*";
+            openFileDialog1.Filter = "Файл ruleml (*.ruleml)|*.ruleml|All files(*.*)|*.*"; //Инициализация фильтра
             convertBtn.Enabled = false;
 
             ruleMl = new List<RuleMl>();
             associations = new List<Association>();
         }
 
-        private void loadFileBtn_Click(object sender, EventArgs e)
+        private void loadFileBtn_Click(object sender, EventArgs e) //Слушитель кнопки выбора файла
         {
             if (openFileDialog1.ShowDialog() == DialogResult.Cancel)
             {
@@ -54,7 +55,7 @@ namespace rulemlToEkb
             checkToReady();
         }
 
-        private void checkToReady()
+        private void checkToReady()//Метод проверки загрузки файла и выбора директории
         {
             if (filename != null && pathToDid != null)
             {
@@ -66,7 +67,7 @@ namespace rulemlToEkb
             }
         }
 
-        private void saveFileBtn_Click(object sender, EventArgs e)
+        private void saveFileBtn_Click(object sender, EventArgs e) //Слушатель кнопки выбора директории
         {
             FolderBrowserDialog FBD = new FolderBrowserDialog();
             FBD.ShowNewFolderButton = false;
@@ -85,7 +86,7 @@ namespace rulemlToEkb
             checkToReady();
         }
 
-        private void convertBtn_Click(object sender, EventArgs e)
+        private void convertBtn_Click(object sender, EventArgs e) //Слушатель кнопки конвертации
         {
             associations.Clear();
             ruleMl.Clear();
@@ -102,7 +103,7 @@ namespace rulemlToEkb
             }
         }
 
-        private void parseTheFile()
+        private void parseTheFile() //Метод парсинга файла
         {
             try
             {
@@ -120,8 +121,9 @@ namespace rulemlToEkb
                 XmlDocument xDoc = new XmlDocument();
                 xDoc.Load(filename);
                 XmlElement xRoot = xDoc.DocumentElement;
-                if (xRoot != null)
+                if (xRoot != null) //Проверка корневой структуры
                 {
+                    //Разбор файла
                     var child = xRoot.ChildNodes;
                     var assert = child.Item(2);
                     if(assert == null)
@@ -132,7 +134,7 @@ namespace rulemlToEkb
                     var imp = assert.FirstChild;
                     var _head = imp.FirstChild;
                     var atoms = _head.ChildNodes;
-                    for (int i = 0; i < atoms.Count; i++)
+                    for (int i = 0; i < atoms.Count; i++) //Разбор классов
                     {
                         Attribute = new List<(string, string)>();
 
@@ -140,7 +142,7 @@ namespace rulemlToEkb
                         var atom = inside.ChildNodes;
                         var op = atom.Item(0);
                         var className = op.ChildNodes.Item(0).InnerText;
-                        for (int j = 0; j < atom.Count; j++)
+                        for (int j = 0; j < atom.Count; j++) //Разбор переменных
                         {
                             var temp = atom[j];
                             if (temp.Attributes["type"] != null)
@@ -151,7 +153,7 @@ namespace rulemlToEkb
                             }
                            
                         }
-                        ruleMl.Add(new RuleMl(className, Attribute));
+                        ruleMl.Add(new RuleMl(className, Attribute)); //Компановка классов
                         attr = "";
                             func = "";
 
@@ -163,7 +165,7 @@ namespace rulemlToEkb
                         return;
                     }
                     var bodyAtoms = body.ChildNodes;
-                    for (int i = 0; i < bodyAtoms.Count; i++)
+                    for (int i = 0; i < bodyAtoms.Count; i++) //Разбор связей
                     {
                         Attribute = new List<(string, string)>();
 
@@ -175,7 +177,7 @@ namespace rulemlToEkb
                         start = inside.ChildNodes.Item(1).InnerText;
                         end = inside.ChildNodes.Item(2).InnerText;
 
-                        associations.Add(new Association(className, start, end));
+                        associations.Add(new Association(className, start, end)); //Компановка связей
                     }
 
                     Console.WriteLine("efefefef");
@@ -188,18 +190,18 @@ namespace rulemlToEkb
             }
         }
 
-        private void saveToEkb()
+        private void saveToEkb() //Сохранение готового файла
         {
             string path = $"{pathToDid}/file.ekb";
             System.IO.File.WriteAllText(path, ekbText);
             MessageBox.Show("Файл сохранен");
         }
 
-        private void convertToEKB()
+        private void convertToEKB() //Создание файла структуры ekb
         {
-            
+            //Заполнение шапки
             Random random = new Random();
-            string id = $"{random.Next(1000000000)}{random.Next(100)}";
+            string id = $"{random.Next(1000000000)}{random.Next(100)}"; 
             string header = $"\r\n<Structure>"
                 + $"\r\n<KnowledgeBase>"
                 + $"\r\n<ID>{id}</ID>"
@@ -220,7 +222,7 @@ namespace rulemlToEkb
 
             ekbText = header;
             int count = 1;
-            while (l < ruleMl.Count)
+            while (l < ruleMl.Count) //Заполнение классов
             {
                 string idTempStr = "";
                 if (count < 10)
@@ -248,7 +250,7 @@ namespace rulemlToEkb
                 $"\r\n<Slots>";
                 int p = 0;
                 ekbText += templates;
-                while (p < ruleMl[l].Attribute.Count)
+                while (p < ruleMl[l].Attribute.Count) //Заполнение переменных класса
                 {
                     slots = $"\r\n<Slot>" +
                     $"\r\n<Name>{ruleMl[l].Attribute[p].Item2}</Name>" +
@@ -278,7 +280,7 @@ namespace rulemlToEkb
 
             int q = 0;
             count = 1;
-            while (q < associations.Count)
+            while (q < associations.Count) //Заполнение связей
             {
                 string idTempStr = "";
                 if (count < 10)
@@ -315,7 +317,7 @@ namespace rulemlToEkb
                 q++;
                 count++;
             }
-
+            //Заполнение конца файла
             string ekbEnd = $"\r\n</GRules>" +
                 $"\r\n<Rules/>" +
                 $"\r\n<Functions/>" +
