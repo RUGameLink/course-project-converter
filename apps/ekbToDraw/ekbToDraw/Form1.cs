@@ -132,9 +132,10 @@ namespace ekbToDraw
                     var templates = know.Item(6).ChildNodes;
                     for(int i = 0; i < templates.Count; i++)
                     {
+                        Attribute = new List<(string, string)>();
                         var template = templates[i];
                         className = template.ChildNodes[1].InnerText;
-                        MessageBox.Show(className);
+                    //    MessageBox.Show(className);
                         var templateInside = template.ChildNodes;
                         var slots = templateInside.Item(7).ChildNodes;
                         for(int j = 0; j < slots.Count; j ++)
@@ -145,6 +146,15 @@ namespace ekbToDraw
                             Attribute.Add((attr, typeText));
                         }
                         ekb.Add(new EKB(className, Attribute));
+                    }
+                    var grules = know.Item(8).ChildNodes;
+                    for(int i = 0; i < grules.Count; i++)
+                    {
+                        var grule = grules[i];
+                        assocName = grule.ChildNodes[1].InnerText;
+                        start = grule.ChildNodes[7].InnerText;
+                        end = grule.ChildNodes[8].InnerText;
+                        associations.Add(new Association(assocName, start, end));
                     }
                     Console.WriteLine();
                 }
