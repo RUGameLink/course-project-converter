@@ -95,7 +95,7 @@ namespace ekbToDraw
             convertToDraw(); //Метод преобразования файла в формат EKB
             if (status)
             {
-        //        saveToEkb();
+                 saveToDraw();
             }
             else
             {
@@ -171,7 +171,74 @@ namespace ekbToDraw
 
         private void convertToDraw() //Метод преобразования файла в формат EKB
         {
+            var drawHeader = $"<?xml version=\"1.0\" encoding=\"UTF-8\"?>" +
+                $"\r\n<mxfile host=\"app.diagrams.net\" modified=\"2022-12-12T10:43:19.882Z\" agent=\"5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 YaBrowser/22.11.2.807 Yowser/2.5 Safari/537.36\" etag=\"o0eCUbzZ9Tfc7CzTUTEk\" version=\"20.6.2\" type=\"device\">" +
+                $"\r\n  <diagram id=\"C5RBs43oDa-KdzZeNtuy\" name=\"Page-1\">" +
+                $"\r\n    <mxGraphModel dx=\"1247\" dy=\"694\" grid=\"1\" gridSize=\"10\" guides=\"1\" tooltips=\"1\" connect=\"1\" arrows=\"1\" fold=\"1\" page=\"1\" pageScale=\"1\" pageWidth=\"827\" pageHeight=\"1169\" math=\"0\" shadow=\"0\">" +
+                $"\r\n      <root>";
+            drawText += drawHeader;
+            
+            var drawBody = $"        \r\n<mxCell id=\"WIyWlLk6GJQsqaUBKTNV-0\" />" +
+                $"\r\n        <mxCell id=\"WIyWlLk6GJQsqaUBKTNV-1\" parent=\"WIyWlLk6GJQsqaUBKTNV-0\" />";
+            drawText += drawBody;
+            int count = 0;
+            var x = 110;
+            var y = 200;
 
+            var xLast = 0;
+            var yLast = 0;
+            for (int i = 0; i < ekb.Count; i++)
+            {
+                int paramCount = 26;
+                var classText = $"\r\n<mxCell id=\"x-kl-r7OIvYpWUdUMo4z-{count}\" value=\"{ekb[i].ClassName}\" style=\"swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=none;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;\" vertex=\"1\" parent=\"WIyWlLk6GJQsqaUBKTNV-1\">" +
+    $"\r\n          <mxGeometry x=\"{x}\" y=\"{y}\" width=\"140\" height=\"104\" as=\"geometry\" />" +
+    $"\r\n        </mxCell>";
+                drawText += classText;
+                count++;
+                Random rnd = new Random();
+                xLast = x;
+                yLast = y;
+
+                x = x + rnd.Next(25, 50);
+                y = y + rnd.Next(25, 50);
+                for (int j = 0; j < ekb[i].Attribute.Count; j++)
+                {
+                 //   var insideCount = count;
+                    var paramText = $"\r\n<mxCell id=\"x-kl-r7OIvYpWUdUMo4z-{count}\" value=\"- {ekb[i].Attribute[j].Item1}: {ekb[i].Attribute[j].Item2}\" style=\"text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;\" vertex=\"1\" parent=\"x-kl-r7OIvYpWUdUMo4z-{i}\">" +
+                        $"\r\n          <mxGeometry y=\"{paramCount}\" width=\"140\" height=\"26\" as=\"geometry\" />" +
+                        $"\r\n</mxCell>";
+                    count++;
+                    paramCount += 26;
+                   // count = insideCount;
+                    drawText += paramText;
+                }
+
+                //for (int j = 0; j < associations.Count; j++)
+                //{
+                //    var assocText = $"        \r\n<mxCell id=\"x-kl-r7OIvYpWUdUMo4z-{count}\" value=\"\" style=\"endArrow=open;endFill=1;endSize=12;html=1;rounded=0;exitX=1.019;exitY=0.108;exitDx=0;exitDy=0;exitPerimeter=0;entryX=-0.02;entryY=0.13;entryDx=0;entryDy=0;entryPerimeter=0;\" edge=\"1\" parent=\"{associations[j].SourceName}\" source=\"Class\" target=\"{associations[j].TargetName}\">" +
+                //        $"\r\n          <mxGeometry width=\"160\" relative=\"1\" as=\"geometry\">" +
+                //        $"\r\n            <mxPoint x=\"280\" y=\"120\" as=\"sourcePoint\" />" +
+                //        $"\r\n            <mxPoint x=\"440\" y=\"120\" as=\"targetPoint\" />" +
+                //        $"\r\n          </mxGeometry>" +
+                //        $"\r\n        </mxCell>";
+                //    count++;
+                //    drawText += assocText;
+                //}
+            }
+            var drawFooter = $"      \r\n</root>" +
+                $"\r\n    </mxGraphModel>" +
+                $"\r\n  </diagram>" +
+                $"\r\n</mxfile>";
+
+            drawText+= drawFooter;
+            textBox1.Text = drawText;
+        }
+
+        private void saveToDraw() //Метод сохранения файла
+        {
+            string path = $"{pathToDid}/file.xml";
+            System.IO.File.WriteAllText(path, drawText);
+            MessageBox.Show("Файл сохранен");
         }
     }
 }
