@@ -1,0 +1,826 @@
+<?xml version="1.0" encoding="windows-1252"?>
+<Package name="Basic Class Diagram with Attributes and Operations" guid="{20F4B323-BD17-4d96-A0D5-6B83ABBD30D3}">
+	<Table name="t_package">
+		<Row>
+			<Column name="Package_ID" value="13"/>
+			<Column name="Name" value="Basic Class Diagram with Attributes and Operations"/>
+			<Column name="Parent_ID" value="1"/>
+			<Column name="CreatedDate" value="2022-11-20 18:44:44"/>
+			<Column name="ModifiedDate" value="2022-11-20 18:58:07"/>
+			<Column name="ea_guid" value="{20F4B323-BD17-4d96-A0D5-6B83ABBD30D3}"/>
+			<Column name="IsControlled" value="FALSE"/>
+			<Column name="LastLoadDate" value="2018-01-29 07:41:59"/>
+			<Column name="LastSaveDate" value="2018-01-29 07:41:59"/>
+			<Column name="Version" value="1.0"/>
+			<Column name="Protected" value="FALSE"/>
+			<Column name="UseDTD" value="FALSE"/>
+			<Column name="LogXML" value="FALSE"/>
+			<Column name="TPos" value="7"/>
+			<Column name="PackageFlags" value="CRC=0;"/>
+			<Column name="BatchSave" value="0"/>
+			<Column name="BatchLoad" value="0"/>
+			<Extension/>
+		</Row>
+	</Table>
+	<Table name="t_object">
+		<Row>
+			<Column name="Object_ID" value="71"/>
+			<Column name="Object_Type" value="Class"/>
+			<Column name="Diagram_ID" value="0"/>
+			<Column name="Name" value="EA"/>
+			<Column name="Author" value="worker"/>
+			<Column name="Version" value="1.0"/>
+			<Column name="Package_ID" value="13"/>
+			<Column name="NType" value="0"/>
+			<Column name="Complexity" value="1"/>
+			<Column name="Effort" value="0"/>
+			<Column name="Backcolor" value="-1"/>
+			<Column name="BorderStyle" value="0"/>
+			<Column name="BorderWidth" value="-1"/>
+			<Column name="Fontcolor" value="-1"/>
+			<Column name="Bordercolor" value="-1"/>
+			<Column name="CreatedDate" value="2022-11-20 18:44:44"/>
+			<Column name="ModifiedDate" value="2022-11-20 21:05:02"/>
+			<Column name="Status" value="Proposed"/>
+			<Column name="Abstract" value="0"/>
+			<Column name="Tagged" value="0"/>
+			<Column name="PDATA2" value="&lt;none&gt;"/>
+			<Column name="PDATA4" value="0"/>
+			<Column name="GenType" value="&lt;none&gt;"/>
+			<Column name="Phase" value="1.0"/>
+			<Column name="Scope" value="Public"/>
+			<Column name="Classifier" value="0"/>
+			<Column name="ea_guid" value="{0B005084-EE82-4532-B340-A7529312F122}"/>
+			<Column name="ParentID" value="0"/>
+			<Column name="TPos" value="0"/>
+			<Column name="IsRoot" value="FALSE"/>
+			<Column name="IsLeaf" value="FALSE"/>
+			<Column name="IsSpec" value="FALSE"/>
+			<Column name="IsActive" value="FALSE"/>
+			<Extension Package_ID="{20F4B323-BD17-4d96-A0D5-6B83ABBD30D3}"/>
+		</Row>
+		<Row>
+			<Column name="Object_ID" value="72"/>
+			<Column name="Object_Type" value="Class"/>
+			<Column name="Diagram_ID" value="0"/>
+			<Column name="Name" value="EKB"/>
+			<Column name="Author" value="worker"/>
+			<Column name="Version" value="1.0"/>
+			<Column name="Package_ID" value="13"/>
+			<Column name="NType" value="0"/>
+			<Column name="Complexity" value="1"/>
+			<Column name="Effort" value="0"/>
+			<Column name="Backcolor" value="-1"/>
+			<Column name="BorderStyle" value="0"/>
+			<Column name="BorderWidth" value="-1"/>
+			<Column name="Fontcolor" value="-1"/>
+			<Column name="Bordercolor" value="-1"/>
+			<Column name="CreatedDate" value="2022-11-20 18:44:44"/>
+			<Column name="ModifiedDate" value="2022-11-20 21:05:08"/>
+			<Column name="Status" value="Proposed"/>
+			<Column name="Abstract" value="0"/>
+			<Column name="Tagged" value="0"/>
+			<Column name="PDATA2" value="&lt;none&gt;"/>
+			<Column name="PDATA4" value="0"/>
+			<Column name="GenType" value="&lt;none&gt;"/>
+			<Column name="Phase" value="1.0"/>
+			<Column name="Scope" value="Public"/>
+			<Column name="Classifier" value="0"/>
+			<Column name="ea_guid" value="{0D7D3E3A-30E8-4458-A448-A37C061E5357}"/>
+			<Column name="ParentID" value="0"/>
+			<Column name="TPos" value="0"/>
+			<Column name="IsRoot" value="FALSE"/>
+			<Column name="IsLeaf" value="FALSE"/>
+			<Column name="IsSpec" value="FALSE"/>
+			<Column name="IsActive" value="FALSE"/>
+			<Extension Package_ID="{20F4B323-BD17-4d96-A0D5-6B83ABBD30D3}"/>
+		</Row>
+		<Row>
+			<Column name="Object_ID" value="73"/>
+			<Column name="Object_Type" value="Class"/>
+			<Column name="Diagram_ID" value="0"/>
+			<Column name="Name" value="Class1"/>
+			<Column name="Author" value="worker"/>
+			<Column name="Version" value="1.0"/>
+			<Column name="Package_ID" value="13"/>
+			<Column name="NType" value="0"/>
+			<Column name="Complexity" value="1"/>
+			<Column name="Effort" value="0"/>
+			<Column name="Backcolor" value="-1"/>
+			<Column name="BorderStyle" value="0"/>
+			<Column name="BorderWidth" value="-1"/>
+			<Column name="Fontcolor" value="-1"/>
+			<Column name="Bordercolor" value="-1"/>
+			<Column name="CreatedDate" value="2022-11-20 18:57:26"/>
+			<Column name="ModifiedDate" value="2022-11-20 18:57:26"/>
+			<Column name="Status" value="Proposed"/>
+			<Column name="Abstract" value="0"/>
+			<Column name="Tagged" value="0"/>
+			<Column name="PDATA4" value="0"/>
+			<Column name="GenType" value="Java"/>
+			<Column name="Phase" value="1.0"/>
+			<Column name="Scope" value="Public"/>
+			<Column name="Classifier" value="0"/>
+			<Column name="ea_guid" value="{1714063D-065D-4b3b-A329-96A748FE914E}"/>
+			<Column name="ParentID" value="0"/>
+			<Column name="IsRoot" value="FALSE"/>
+			<Column name="IsLeaf" value="FALSE"/>
+			<Column name="IsSpec" value="FALSE"/>
+			<Column name="IsActive" value="FALSE"/>
+			<Extension Package_ID="{20F4B323-BD17-4d96-A0D5-6B83ABBD30D3}"/>
+		</Row>
+		<Row>
+			<Column name="Object_ID" value="69"/>
+			<Column name="Object_Type" value="Package"/>
+			<Column name="Diagram_ID" value="0"/>
+			<Column name="Name" value="Basic Class Diagram with Attributes and Operations"/>
+			<Column name="Author" value="worker"/>
+			<Column name="Version" value="1.0"/>
+			<Column name="Package_ID" value="1"/>
+			<Column name="NType" value="0"/>
+			<Column name="Complexity" value="1"/>
+			<Column name="Effort" value="0"/>
+			<Column name="Backcolor" value="-1"/>
+			<Column name="BorderStyle" value="0"/>
+			<Column name="BorderWidth" value="-1"/>
+			<Column name="Fontcolor" value="-1"/>
+			<Column name="Bordercolor" value="-1"/>
+			<Column name="CreatedDate" value="2022-11-20 18:44:44"/>
+			<Column name="ModifiedDate" value="2022-11-20 18:58:07"/>
+			<Column name="Status" value="Proposed"/>
+			<Column name="Abstract" value="0"/>
+			<Column name="Tagged" value="0"/>
+			<Column name="PDATA1" value="13"/>
+			<Column name="GenType" value="C#"/>
+			<Column name="Phase" value="1.0"/>
+			<Column name="Scope" value="Public"/>
+			<Column name="Classifier" value="0"/>
+			<Column name="ea_guid" value="{20F4B323-BD17-4d96-A0D5-6B83ABBD30D3}"/>
+			<Column name="ParentID" value="0"/>
+			<Column name="TPos" value="7"/>
+			<Column name="IsRoot" value="FALSE"/>
+			<Column name="IsLeaf" value="FALSE"/>
+			<Column name="IsSpec" value="FALSE"/>
+			<Column name="IsActive" value="FALSE"/>
+			<Extension PDATA1="{20F4B323-BD17-4d96-A0D5-6B83ABBD30D3}"/>
+		</Row>
+		<Row>
+			<Column name="Object_ID" value="70"/>
+			<Column name="Object_Type" value="Class"/>
+			<Column name="Diagram_ID" value="0"/>
+			<Column name="Name" value="Form1"/>
+			<Column name="Author" value="worker"/>
+			<Column name="Version" value="1.0"/>
+			<Column name="Package_ID" value="13"/>
+			<Column name="NType" value="0"/>
+			<Column name="Complexity" value="1"/>
+			<Column name="Effort" value="0"/>
+			<Column name="Backcolor" value="-1"/>
+			<Column name="BorderStyle" value="0"/>
+			<Column name="BorderWidth" value="-1"/>
+			<Column name="Fontcolor" value="-1"/>
+			<Column name="Bordercolor" value="-1"/>
+			<Column name="CreatedDate" value="2022-11-20 18:44:44"/>
+			<Column name="ModifiedDate" value="2022-11-20 18:57:52"/>
+			<Column name="Status" value="Proposed"/>
+			<Column name="Abstract" value="0"/>
+			<Column name="Tagged" value="0"/>
+			<Column name="PDATA2" value="&lt;none&gt;"/>
+			<Column name="PDATA4" value="0"/>
+			<Column name="GenType" value="&lt;none&gt;"/>
+			<Column name="Phase" value="1.0"/>
+			<Column name="Scope" value="Public"/>
+			<Column name="Classifier" value="0"/>
+			<Column name="ea_guid" value="{B8CA4753-9386-483d-9DC1-17BA93920ED0}"/>
+			<Column name="ParentID" value="0"/>
+			<Column name="TPos" value="0"/>
+			<Column name="IsRoot" value="FALSE"/>
+			<Column name="IsLeaf" value="FALSE"/>
+			<Column name="IsSpec" value="FALSE"/>
+			<Column name="IsActive" value="FALSE"/>
+			<Extension Package_ID="{20F4B323-BD17-4d96-A0D5-6B83ABBD30D3}"/>
+		</Row>
+	</Table>
+	<Table name="t_attribute">
+		<Row>
+			<Column name="Object_ID" value="70"/>
+			<Column name="Name" value="pathToFile"/>
+			<Column name="Scope" value="Private"/>
+			<Column name="Containment" value="Not Specified"/>
+			<Column name="IsStatic" value="0"/>
+			<Column name="IsCollection" value="0"/>
+			<Column name="IsOrdered" value="0"/>
+			<Column name="AllowDuplicates" value="0"/>
+			<Column name="LowerBound" value="1"/>
+			<Column name="UpperBound" value="1"/>
+			<Column name="Derived" value="0"/>
+			<Column name="ID" value="1"/>
+			<Column name="Pos" value="0"/>
+			<Column name="Length" value="0"/>
+			<Column name="Precision" value="0"/>
+			<Column name="Scale" value="0"/>
+			<Column name="Const" value="0"/>
+			<Column name="Classifier" value="0"/>
+			<Column name="Type" value="String"/>
+			<Column name="ea_guid" value="{28E7B0A5-3479-49c3-8B04-A7D8E5A5DDE4}"/>
+			<Column name="StyleEx" value="volatile=0;"/>
+			<Extension Object_ID="{B8CA4753-9386-483d-9DC1-17BA93920ED0}"/>
+		</Row>
+		<Row>
+			<Column name="Object_ID" value="72"/>
+			<Column name="Name" value="fact"/>
+			<Column name="Scope" value="Private"/>
+			<Column name="Containment" value="Not Specified"/>
+			<Column name="IsStatic" value="0"/>
+			<Column name="IsCollection" value="0"/>
+			<Column name="IsOrdered" value="0"/>
+			<Column name="AllowDuplicates" value="0"/>
+			<Column name="LowerBound" value="1"/>
+			<Column name="UpperBound" value="1"/>
+			<Column name="Derived" value="0"/>
+			<Column name="ID" value="5"/>
+			<Column name="Pos" value="0"/>
+			<Column name="Length" value="0"/>
+			<Column name="Precision" value="0"/>
+			<Column name="Scale" value="0"/>
+			<Column name="Const" value="0"/>
+			<Column name="Classifier" value="0"/>
+			<Column name="Type" value="String"/>
+			<Column name="ea_guid" value="{2CC6D051-2F20-4115-A282-414BD03A4938}"/>
+			<Column name="StyleEx" value="volatile=0;"/>
+			<Extension Object_ID="{0D7D3E3A-30E8-4458-A448-A37C061E5357}"/>
+		</Row>
+		<Row>
+			<Column name="Object_ID" value="71"/>
+			<Column name="Name" value="EntityItem"/>
+			<Column name="Scope" value="Private"/>
+			<Column name="Containment" value="Not Specified"/>
+			<Column name="IsStatic" value="0"/>
+			<Column name="IsCollection" value="0"/>
+			<Column name="IsOrdered" value="0"/>
+			<Column name="AllowDuplicates" value="0"/>
+			<Column name="LowerBound" value="1"/>
+			<Column name="UpperBound" value="1"/>
+			<Column name="Derived" value="0"/>
+			<Column name="ID" value="3"/>
+			<Column name="Pos" value="2"/>
+			<Column name="Length" value="0"/>
+			<Column name="Precision" value="0"/>
+			<Column name="Scale" value="0"/>
+			<Column name="Const" value="0"/>
+			<Column name="Classifier" value="0"/>
+			<Column name="Type" value="String"/>
+			<Column name="ea_guid" value="{3C303F1B-920C-4061-9A06-AEAC72ADB19B}"/>
+			<Column name="StyleEx" value="volatile=0;"/>
+			<Extension Object_ID="{0B005084-EE82-4532-B340-A7529312F122}"/>
+		</Row>
+		<Row>
+			<Column name="Object_ID" value="71"/>
+			<Column name="Name" value="Attribute"/>
+			<Column name="Scope" value="Private"/>
+			<Column name="Containment" value="Not Specified"/>
+			<Column name="IsStatic" value="0"/>
+			<Column name="IsCollection" value="0"/>
+			<Column name="IsOrdered" value="0"/>
+			<Column name="AllowDuplicates" value="0"/>
+			<Column name="LowerBound" value="1"/>
+			<Column name="UpperBound" value="1"/>
+			<Column name="Derived" value="0"/>
+			<Column name="ID" value="35"/>
+			<Column name="Pos" value="1"/>
+			<Column name="Length" value="0"/>
+			<Column name="Const" value="0"/>
+			<Column name="Classifier" value="0"/>
+			<Column name="Type" value="String"/>
+			<Column name="ea_guid" value="{52662CF6-FBE3-46f9-8BA2-EEDCCB357645}"/>
+			<Column name="StyleEx" value="volatile=0;union=0;"/>
+			<Extension Object_ID="{0B005084-EE82-4532-B340-A7529312F122}"/>
+		</Row>
+		<Row>
+			<Column name="Object_ID" value="72"/>
+			<Column name="Name" value="action"/>
+			<Column name="Scope" value="Private"/>
+			<Column name="Containment" value="Not Specified"/>
+			<Column name="IsStatic" value="0"/>
+			<Column name="IsCollection" value="0"/>
+			<Column name="IsOrdered" value="0"/>
+			<Column name="AllowDuplicates" value="0"/>
+			<Column name="LowerBound" value="1"/>
+			<Column name="UpperBound" value="1"/>
+			<Column name="Derived" value="0"/>
+			<Column name="ID" value="34"/>
+			<Column name="Pos" value="1"/>
+			<Column name="Length" value="0"/>
+			<Column name="Const" value="0"/>
+			<Column name="Classifier" value="0"/>
+			<Column name="Type" value="String"/>
+			<Column name="ea_guid" value="{868F4054-AF44-4396-A047-17B04DE0024C}"/>
+			<Column name="StyleEx" value="volatile=0;union=0;"/>
+			<Extension Object_ID="{0D7D3E3A-30E8-4458-A448-A37C061E5357}"/>
+		</Row>
+		<Row>
+			<Column name="Object_ID" value="72"/>
+			<Column name="Name" value="rule"/>
+			<Column name="Scope" value="Private"/>
+			<Column name="Containment" value="Not Specified"/>
+			<Column name="IsStatic" value="0"/>
+			<Column name="IsCollection" value="0"/>
+			<Column name="IsOrdered" value="0"/>
+			<Column name="AllowDuplicates" value="0"/>
+			<Column name="LowerBound" value="1"/>
+			<Column name="UpperBound" value="1"/>
+			<Column name="Derived" value="0"/>
+			<Column name="ID" value="6"/>
+			<Column name="Pos" value="2"/>
+			<Column name="Length" value="0"/>
+			<Column name="Precision" value="0"/>
+			<Column name="Scale" value="0"/>
+			<Column name="Const" value="0"/>
+			<Column name="Classifier" value="0"/>
+			<Column name="Type" value="String"/>
+			<Column name="ea_guid" value="{D271895A-BEE0-4ac7-9E93-4C5C48E82988}"/>
+			<Column name="StyleEx" value="volatile=0;"/>
+			<Extension Object_ID="{0D7D3E3A-30E8-4458-A448-A37C061E5357}"/>
+		</Row>
+		<Row>
+			<Column name="Object_ID" value="71"/>
+			<Column name="Name" value="Assotiation"/>
+			<Column name="Scope" value="Private"/>
+			<Column name="Containment" value="Not Specified"/>
+			<Column name="IsStatic" value="0"/>
+			<Column name="IsCollection" value="0"/>
+			<Column name="IsOrdered" value="0"/>
+			<Column name="AllowDuplicates" value="0"/>
+			<Column name="LowerBound" value="1"/>
+			<Column name="UpperBound" value="1"/>
+			<Column name="Derived" value="0"/>
+			<Column name="ID" value="4"/>
+			<Column name="Pos" value="0"/>
+			<Column name="Length" value="0"/>
+			<Column name="Precision" value="0"/>
+			<Column name="Scale" value="0"/>
+			<Column name="Const" value="0"/>
+			<Column name="Classifier" value="0"/>
+			<Column name="Type" value="String"/>
+			<Column name="ea_guid" value="{E13B1F51-F434-471b-AB53-8EABE25C5728}"/>
+			<Column name="StyleEx" value="volatile=0;"/>
+			<Extension Object_ID="{0B005084-EE82-4532-B340-A7529312F122}"/>
+		</Row>
+		<Row>
+			<Column name="Object_ID" value="70"/>
+			<Column name="Name" value="pathToSave"/>
+			<Column name="Scope" value="Private"/>
+			<Column name="Containment" value="Not Specified"/>
+			<Column name="IsStatic" value="0"/>
+			<Column name="IsCollection" value="0"/>
+			<Column name="IsOrdered" value="0"/>
+			<Column name="AllowDuplicates" value="0"/>
+			<Column name="LowerBound" value="1"/>
+			<Column name="UpperBound" value="1"/>
+			<Column name="Derived" value="0"/>
+			<Column name="ID" value="2"/>
+			<Column name="Pos" value="0"/>
+			<Column name="Length" value="0"/>
+			<Column name="Precision" value="0"/>
+			<Column name="Scale" value="0"/>
+			<Column name="Const" value="0"/>
+			<Column name="Classifier" value="0"/>
+			<Column name="Type" value="String"/>
+			<Column name="ea_guid" value="{E980709A-F3A7-4f62-8A48-576D11E226DA}"/>
+			<Column name="StyleEx" value="volatile=0;"/>
+			<Extension Object_ID="{B8CA4753-9386-483d-9DC1-17BA93920ED0}"/>
+		</Row>
+	</Table>
+	<Table name="t_operation">
+		<Row>
+			<Column name="OperationID" value="6"/>
+			<Column name="Object_ID" value="72"/>
+			<Column name="Name" value="setRule"/>
+			<Column name="Scope" value="Public"/>
+			<Column name="Type" value="void"/>
+			<Column name="ReturnArray" value="0"/>
+			<Column name="IsStatic" value="0"/>
+			<Column name="Concurrency" value="Sequential"/>
+			<Column name="Abstract" value="0"/>
+			<Column name="Synchronized" value="0"/>
+			<Column name="Pos" value="1"/>
+			<Column name="Const" value="0"/>
+			<Column name="Pure" value="FALSE"/>
+			<Column name="Classifier" value="0"/>
+			<Column name="IsRoot" value="FALSE"/>
+			<Column name="IsLeaf" value="FALSE"/>
+			<Column name="IsQuery" value="FALSE"/>
+			<Column name="ea_guid" value="{015FFDF3-29B0-4d3d-B4E2-177E8828F721}"/>
+			<Extension Object_ID="{0D7D3E3A-30E8-4458-A448-A37C061E5357}"/>
+		</Row>
+		<Row>
+			<Column name="OperationID" value="3"/>
+			<Column name="Object_ID" value="71"/>
+			<Column name="Name" value="setAssotiation"/>
+			<Column name="Scope" value="Public"/>
+			<Column name="Type" value="void"/>
+			<Column name="ReturnArray" value="0"/>
+			<Column name="IsStatic" value="0"/>
+			<Column name="Concurrency" value="Sequential"/>
+			<Column name="Abstract" value="0"/>
+			<Column name="Synchronized" value="0"/>
+			<Column name="Pos" value="0"/>
+			<Column name="Const" value="0"/>
+			<Column name="Pure" value="FALSE"/>
+			<Column name="Classifier" value="0"/>
+			<Column name="IsRoot" value="FALSE"/>
+			<Column name="IsLeaf" value="FALSE"/>
+			<Column name="IsQuery" value="FALSE"/>
+			<Column name="ea_guid" value="{115BE0CA-A8AE-45e0-9B6E-059BE5E1C351}"/>
+			<Extension Object_ID="{0B005084-EE82-4532-B340-A7529312F122}"/>
+		</Row>
+		<Row>
+			<Column name="OperationID" value="5"/>
+			<Column name="Object_ID" value="72"/>
+			<Column name="Name" value="getFact"/>
+			<Column name="Scope" value="Public"/>
+			<Column name="Type" value="String"/>
+			<Column name="ReturnArray" value="0"/>
+			<Column name="IsStatic" value="0"/>
+			<Column name="Concurrency" value="Sequential"/>
+			<Column name="Abstract" value="0"/>
+			<Column name="Synchronized" value="0"/>
+			<Column name="Pos" value="0"/>
+			<Column name="Const" value="0"/>
+			<Column name="Pure" value="FALSE"/>
+			<Column name="Classifier" value="0"/>
+			<Column name="IsRoot" value="FALSE"/>
+			<Column name="IsLeaf" value="FALSE"/>
+			<Column name="IsQuery" value="FALSE"/>
+			<Column name="ea_guid" value="{509930A3-CB35-4d6b-BE12-9ED1DC7C5799}"/>
+			<Extension Object_ID="{0D7D3E3A-30E8-4458-A448-A37C061E5357}"/>
+		</Row>
+		<Row>
+			<Column name="OperationID" value="2"/>
+			<Column name="Object_ID" value="70"/>
+			<Column name="Name" value="selectPathToSave"/>
+			<Column name="Scope" value="Private"/>
+			<Column name="Type" value="void"/>
+			<Column name="ReturnArray" value="0"/>
+			<Column name="IsStatic" value="0"/>
+			<Column name="Concurrency" value="Sequential"/>
+			<Column name="Abstract" value="0"/>
+			<Column name="Synchronized" value="0"/>
+			<Column name="Pos" value="2"/>
+			<Column name="Const" value="0"/>
+			<Column name="Pure" value="FALSE"/>
+			<Column name="Classifier" value="0"/>
+			<Column name="IsRoot" value="FALSE"/>
+			<Column name="IsLeaf" value="FALSE"/>
+			<Column name="IsQuery" value="FALSE"/>
+			<Column name="ea_guid" value="{58E30BE6-7986-4bfe-ABB5-91A5D60C71C5}"/>
+			<Extension Object_ID="{B8CA4753-9386-483d-9DC1-17BA93920ED0}"/>
+		</Row>
+		<Row>
+			<Column name="OperationID" value="1"/>
+			<Column name="Object_ID" value="70"/>
+			<Column name="Name" value="selectPathToFile"/>
+			<Column name="Scope" value="Private"/>
+			<Column name="Type" value="void"/>
+			<Column name="ReturnArray" value="0"/>
+			<Column name="IsStatic" value="0"/>
+			<Column name="Concurrency" value="Sequential"/>
+			<Column name="Abstract" value="0"/>
+			<Column name="Synchronized" value="0"/>
+			<Column name="Pos" value="0"/>
+			<Column name="Const" value="0"/>
+			<Column name="Pure" value="FALSE"/>
+			<Column name="Classifier" value="0"/>
+			<Column name="IsRoot" value="FALSE"/>
+			<Column name="IsLeaf" value="FALSE"/>
+			<Column name="IsQuery" value="FALSE"/>
+			<Column name="ea_guid" value="{959C6BC4-7407-4829-9B7D-998DED5A3614}"/>
+			<Extension Object_ID="{B8CA4753-9386-483d-9DC1-17BA93920ED0}"/>
+		</Row>
+		<Row>
+			<Column name="OperationID" value="7"/>
+			<Column name="Object_ID" value="70"/>
+			<Column name="Name" value="convertFile"/>
+			<Column name="Scope" value="Private"/>
+			<Column name="Type" value="void"/>
+			<Column name="ReturnArray" value="0"/>
+			<Column name="IsStatic" value="0"/>
+			<Column name="Concurrency" value="Sequential"/>
+			<Column name="Abstract" value="0"/>
+			<Column name="Synchronized" value="0"/>
+			<Column name="Pos" value="1"/>
+			<Column name="Const" value="0"/>
+			<Column name="Pure" value="FALSE"/>
+			<Column name="Classifier" value="0"/>
+			<Column name="IsRoot" value="FALSE"/>
+			<Column name="IsLeaf" value="FALSE"/>
+			<Column name="IsQuery" value="FALSE"/>
+			<Column name="ea_guid" value="{BB0DB13E-FADE-4d9d-8A91-E624892AFF34}"/>
+			<Extension Object_ID="{B8CA4753-9386-483d-9DC1-17BA93920ED0}"/>
+		</Row>
+		<Row>
+			<Column name="OperationID" value="4"/>
+			<Column name="Object_ID" value="71"/>
+			<Column name="Name" value="getAssotiation"/>
+			<Column name="Scope" value="Public"/>
+			<Column name="Type" value="String"/>
+			<Column name="ReturnArray" value="0"/>
+			<Column name="IsStatic" value="0"/>
+			<Column name="Concurrency" value="Sequential"/>
+			<Column name="Abstract" value="0"/>
+			<Column name="Synchronized" value="0"/>
+			<Column name="Pos" value="1"/>
+			<Column name="Const" value="0"/>
+			<Column name="Pure" value="FALSE"/>
+			<Column name="Classifier" value="0"/>
+			<Column name="IsRoot" value="FALSE"/>
+			<Column name="IsLeaf" value="FALSE"/>
+			<Column name="IsQuery" value="FALSE"/>
+			<Column name="ea_guid" value="{D705A4DC-1C2C-4480-81A3-3BF9DC457BC2}"/>
+			<Extension Object_ID="{0B005084-EE82-4532-B340-A7529312F122}"/>
+		</Row>
+		<Row>
+			<Column name="OperationID" value="8"/>
+			<Column name="Object_ID" value="71"/>
+			<Column name="Name" value="getAttribute"/>
+			<Column name="Scope" value="Public"/>
+			<Column name="Type" value="String"/>
+			<Column name="ReturnArray" value="0"/>
+			<Column name="IsStatic" value="0"/>
+			<Column name="Concurrency" value="Sequential"/>
+			<Column name="Abstract" value="0"/>
+			<Column name="Synchronized" value="0"/>
+			<Column name="Pos" value="2"/>
+			<Column name="Const" value="0"/>
+			<Column name="Pure" value="FALSE"/>
+			<Column name="Classifier" value="0"/>
+			<Column name="IsRoot" value="FALSE"/>
+			<Column name="IsLeaf" value="FALSE"/>
+			<Column name="IsQuery" value="FALSE"/>
+			<Column name="ea_guid" value="{EBCF5200-92B7-4624-A5BB-858425F4592E}"/>
+			<Extension Object_ID="{0B005084-EE82-4532-B340-A7529312F122}"/>
+		</Row>
+	</Table>
+	<Table name="t_operationparams">
+		<Row>
+			<Column name="OperationID" value="2"/>
+			<Column name="Name" value="Parameter"/>
+			<Column name="Pos" value="0"/>
+			<Column name="Const" value="FALSE"/>
+			<Column name="Kind" value="in"/>
+			<Column name="Classifier" value="0"/>
+			<Column name="ea_guid" value="{2C85A9CE-104C-4e8b-84EC-6BC93215E668}"/>
+			<Extension OperationID="{58E30BE6-7986-4bfe-ABB5-91A5D60C71C5}"/>
+		</Row>
+		<Row>
+			<Column name="OperationID" value="1"/>
+			<Column name="Name" value="Parameter A"/>
+			<Column name="Pos" value="0"/>
+			<Column name="Const" value="FALSE"/>
+			<Column name="Kind" value="in"/>
+			<Column name="Classifier" value="0"/>
+			<Column name="ea_guid" value="{4532B785-2D68-4a14-808B-3A448223BE93}"/>
+			<Extension OperationID="{959C6BC4-7407-4829-9B7D-998DED5A3614}"/>
+		</Row>
+		<Row>
+			<Column name="OperationID" value="3"/>
+			<Column name="Name" value="Parameter A"/>
+			<Column name="Type" value="String"/>
+			<Column name="Pos" value="0"/>
+			<Column name="Const" value="FALSE"/>
+			<Column name="Kind" value="in"/>
+			<Column name="Classifier" value="0"/>
+			<Column name="ea_guid" value="{54E315B0-80AB-4f87-9120-C5D802107320}"/>
+			<Extension OperationID="{115BE0CA-A8AE-45e0-9B6E-059BE5E1C351}"/>
+		</Row>
+		<Row>
+			<Column name="OperationID" value="5"/>
+			<Column name="Name" value="Parameter A"/>
+			<Column name="Pos" value="0"/>
+			<Column name="Const" value="FALSE"/>
+			<Column name="Kind" value="in"/>
+			<Column name="Classifier" value="0"/>
+			<Column name="ea_guid" value="{66121E47-35B1-455a-884B-E7949A4BFF98}"/>
+			<Extension OperationID="{509930A3-CB35-4d6b-BE12-9ED1DC7C5799}"/>
+		</Row>
+		<Row>
+			<Column name="OperationID" value="4"/>
+			<Column name="Name" value="Parameter"/>
+			<Column name="Pos" value="0"/>
+			<Column name="Const" value="FALSE"/>
+			<Column name="Kind" value="in"/>
+			<Column name="Classifier" value="0"/>
+			<Column name="ea_guid" value="{C328B7B8-0486-4bd0-8E36-4CFC6207F3E3}"/>
+			<Extension OperationID="{D705A4DC-1C2C-4480-81A3-3BF9DC457BC2}"/>
+		</Row>
+		<Row>
+			<Column name="OperationID" value="6"/>
+			<Column name="Name" value="Parameter"/>
+			<Column name="Type" value="String"/>
+			<Column name="Pos" value="0"/>
+			<Column name="Const" value="FALSE"/>
+			<Column name="Kind" value="in"/>
+			<Column name="Classifier" value="0"/>
+			<Column name="ea_guid" value="{C9221D20-999B-4aca-B36C-C36920452CA6}"/>
+			<Extension OperationID="{015FFDF3-29B0-4d3d-B4E2-177E8828F721}"/>
+		</Row>
+	</Table>
+	<Table name="t_connector">
+		<Row>
+			<Column name="Connector_ID" value="66"/>
+			<Column name="Name" value="Association A"/>
+			<Column name="Direction" value="Unspecified"/>
+			<Column name="Connector_Type" value="Association"/>
+			<Column name="SourceCard" value="0..*"/>
+			<Column name="SourceAccess" value="Public"/>
+			<Column name="DestCard" value="0..*"/>
+			<Column name="DestAccess" value="Public"/>
+			<Column name="SourceRole" value="role a"/>
+			<Column name="SourceContainment" value="Unspecified"/>
+			<Column name="SourceIsAggregate" value="0"/>
+			<Column name="SourceIsOrdered" value="0"/>
+			<Column name="DestRole" value="role b"/>
+			<Column name="DestContainment" value="Unspecified"/>
+			<Column name="DestIsAggregate" value="0"/>
+			<Column name="DestIsOrdered" value="0"/>
+			<Column name="Start_Object_ID" value="70"/>
+			<Column name="End_Object_ID" value="71"/>
+			<Column name="Top_Start_Label" value="+role a"/>
+			<Column name="Top_Mid_Label" value="Association A"/>
+			<Column name="Top_End_Label" value="+role b"/>
+			<Column name="Btm_Start_Label" value="0..*"/>
+			<Column name="Btm_End_Label" value="0..*"/>
+			<Column name="Start_Edge" value="0"/>
+			<Column name="End_Edge" value="0"/>
+			<Column name="PtStartX" value="0"/>
+			<Column name="PtStartY" value="0"/>
+			<Column name="PtEndX" value="0"/>
+			<Column name="PtEndY" value="0"/>
+			<Column name="SeqNo" value="0"/>
+			<Column name="HeadStyle" value="0"/>
+			<Column name="LineStyle" value="0"/>
+			<Column name="RouteStyle" value="3"/>
+			<Column name="IsBold" value="0"/>
+			<Column name="LineColor" value="-1"/>
+			<Column name="VirtualInheritance" value="0"/>
+			<Column name="DiagramID" value="0"/>
+			<Column name="ea_guid" value="{319ED4E7-1A3B-47d0-B317-2BB86A5DAB64}"/>
+			<Column name="SourceIsNavigable" value="FALSE"/>
+			<Column name="DestIsNavigable" value="FALSE"/>
+			<Column name="IsRoot" value="FALSE"/>
+			<Column name="IsLeaf" value="FALSE"/>
+			<Column name="IsSpec" value="FALSE"/>
+			<Column name="SourceChangeable" value="none"/>
+			<Column name="DestChangeable" value="none"/>
+			<Column name="SourceTS" value="instance"/>
+			<Column name="DestTS" value="instance"/>
+			<Column name="IsSignal" value="FALSE"/>
+			<Column name="IsStimulus" value="FALSE"/>
+			<Column name="SourceStyle" value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Unspecified;"/>
+			<Column name="DestStyle" value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Unspecified;"/>
+			<Extension Start_Object_ID="{B8CA4753-9386-483d-9DC1-17BA93920ED0}" End_Object_ID="{0B005084-EE82-4532-B340-A7529312F122}"/>
+		</Row>
+		<Row>
+			<Column name="Connector_ID" value="65"/>
+			<Column name="Name" value="Association B"/>
+			<Column name="Direction" value="Unspecified"/>
+			<Column name="Connector_Type" value="Association"/>
+			<Column name="SourceCard" value="0..1"/>
+			<Column name="SourceAccess" value="Public"/>
+			<Column name="DestCard" value="0..*"/>
+			<Column name="DestAccess" value="Public"/>
+			<Column name="SourceRole" value="role a"/>
+			<Column name="SourceContainment" value="Unspecified"/>
+			<Column name="SourceIsAggregate" value="0"/>
+			<Column name="SourceIsOrdered" value="0"/>
+			<Column name="DestRole" value="role c"/>
+			<Column name="DestContainment" value="Unspecified"/>
+			<Column name="DestIsAggregate" value="0"/>
+			<Column name="DestIsOrdered" value="0"/>
+			<Column name="Start_Object_ID" value="70"/>
+			<Column name="End_Object_ID" value="72"/>
+			<Column name="Top_Start_Label" value="+role a"/>
+			<Column name="Top_Mid_Label" value="Association B"/>
+			<Column name="Top_End_Label" value="+role c"/>
+			<Column name="Btm_Start_Label" value="0..1"/>
+			<Column name="Btm_End_Label" value="0..*"/>
+			<Column name="Start_Edge" value="0"/>
+			<Column name="End_Edge" value="0"/>
+			<Column name="PtStartX" value="0"/>
+			<Column name="PtStartY" value="0"/>
+			<Column name="PtEndX" value="0"/>
+			<Column name="PtEndY" value="0"/>
+			<Column name="SeqNo" value="0"/>
+			<Column name="HeadStyle" value="0"/>
+			<Column name="LineStyle" value="0"/>
+			<Column name="RouteStyle" value="3"/>
+			<Column name="IsBold" value="0"/>
+			<Column name="LineColor" value="-1"/>
+			<Column name="VirtualInheritance" value="0"/>
+			<Column name="DiagramID" value="0"/>
+			<Column name="ea_guid" value="{5A26AA80-8366-4310-8E91-A3DF17B7A81B}"/>
+			<Column name="SourceIsNavigable" value="FALSE"/>
+			<Column name="DestIsNavigable" value="FALSE"/>
+			<Column name="IsRoot" value="FALSE"/>
+			<Column name="IsLeaf" value="FALSE"/>
+			<Column name="IsSpec" value="FALSE"/>
+			<Column name="SourceChangeable" value="none"/>
+			<Column name="DestChangeable" value="none"/>
+			<Column name="SourceTS" value="instance"/>
+			<Column name="DestTS" value="instance"/>
+			<Column name="IsSignal" value="FALSE"/>
+			<Column name="IsStimulus" value="FALSE"/>
+			<Column name="SourceStyle" value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Unspecified;"/>
+			<Column name="DestStyle" value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Unspecified;"/>
+			<Extension Start_Object_ID="{B8CA4753-9386-483d-9DC1-17BA93920ED0}" End_Object_ID="{0D7D3E3A-30E8-4458-A448-A37C061E5357}"/>
+		</Row>
+	</Table>
+	<Table name="t_diagram">
+		<Row>
+			<Column name="Diagram_ID" value="9"/>
+			<Column name="Package_ID" value="13"/>
+			<Column name="ParentID" value="0"/>
+			<Column name="Diagram_Type" value="Logical"/>
+			<Column name="Name" value="Basic Class Diagram with Attributes and Operations"/>
+			<Column name="Version" value="1.0"/>
+			<Column name="Author" value="worker"/>
+			<Column name="ShowDetails" value="0"/>
+			<Column name="AttPub" value="TRUE"/>
+			<Column name="AttPri" value="TRUE"/>
+			<Column name="AttPro" value="TRUE"/>
+			<Column name="Orientation" value="P"/>
+			<Column name="cx" value="826"/>
+			<Column name="cy" value="1169"/>
+			<Column name="Scale" value="100"/>
+			<Column name="CreatedDate" value="2022-11-20 18:44:44"/>
+			<Column name="ModifiedDate" value="2022-11-20 21:13:42"/>
+			<Column name="ShowForeign" value="TRUE"/>
+			<Column name="ShowBorder" value="TRUE"/>
+			<Column name="ShowPackageContents" value="TRUE"/>
+			<Column name="PDATA" value="HideRel=0;ShowTags=0;ShowReqs=0;ShowCons=0;OpParams=1;ShowSN=0;ScalePI=0;PPgs.cx=1;PPgs.cy=1;PSize=9;ShowIcons=1;SuppCN=0;HideProps=0;HideParents=0;UseAlias=0;HideAtts=0;HideOps=0;HideStereo=0;HideEStereo=0;ShowRec=1;ShowRes=0;ShowShape=1;FormName=;"/>
+			<Column name="Locked" value="FALSE"/>
+			<Column name="ea_guid" value="{75BF1117-E279-482a-8712-C9BA234D0490}"/>
+			<Column name="Swimlanes" value="locked=false;orientation=0;width=0;inbar=false;names=false;color=-1;bold=false;fcol=0;tcol=-1;ofCol=-1;ufCol=-1;hl=0;ufh=0;hh=0;cls=0;bw=0;hli=0;"/>
+			<Column name="StyleEx" value="ExcludeRTF=0;DocAll=0;HideQuals=0;AttPkg=1;ShowTests=0;ShowMaint=0;SuppressFOC=1;MatrixActive=0;SwimlanesActive=1;KanbanActive=0;MatrixLineWidth=1;MatrixLineClr=0;MatrixLocked=0;TConnectorNotation=UML 2.1;TExplicitNavigability=0;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;m_bElementClassifier=1;SPT=1;MDGDgm=;STBLDgm=;ShowNotes=0;VisibleAttributeDetail=0;ShowOpRetType=1;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;SuppressedCompartments=;Theme=:119;SaveTag=CDAC2C45;"/>
+			<Extension Package_ID="{20F4B323-BD17-4d96-A0D5-6B83ABBD30D3}"/>
+		</Row>
+	</Table>
+	<Table name="t_diagramobjects">
+		<Row>
+			<Column name="Diagram_ID" value="9"/>
+			<Column name="Object_ID" value="70"/>
+			<Column name="RectTop" value="-100"/>
+			<Column name="RectLeft" value="100"/>
+			<Column name="RectRight" value="249"/>
+			<Column name="RectBottom" value="-215"/>
+			<Column name="Sequence" value="3"/>
+			<Column name="ObjectStyle" value="DUID=267DA7E2;"/>
+			<Column name="Instance_ID" value="59"/>
+			<Extension Diagram_ID="{75BF1117-E279-482a-8712-C9BA234D0490}" Object_ID="{B8CA4753-9386-483d-9DC1-17BA93920ED0}"/>
+		</Row>
+		<Row>
+			<Column name="Diagram_ID" value="9"/>
+			<Column name="Object_ID" value="71"/>
+			<Column name="RectTop" value="-81"/>
+			<Column name="RectLeft" value="428"/>
+			<Column name="RectRight" value="604"/>
+			<Column name="RectBottom" value="-236"/>
+			<Column name="Sequence" value="2"/>
+			<Column name="ObjectStyle" value="DUID=850C12CA;"/>
+			<Column name="Instance_ID" value="58"/>
+			<Extension Diagram_ID="{75BF1117-E279-482a-8712-C9BA234D0490}" Object_ID="{0B005084-EE82-4532-B340-A7529312F122}"/>
+		</Row>
+		<Row>
+			<Column name="Diagram_ID" value="9"/>
+			<Column name="Object_ID" value="72"/>
+			<Column name="RectTop" value="-303"/>
+			<Column name="RectLeft" value="106"/>
+			<Column name="RectRight" value="256"/>
+			<Column name="RectBottom" value="-418"/>
+			<Column name="Sequence" value="1"/>
+			<Column name="ObjectStyle" value="ImageID=0;DUID=B76685B2;"/>
+			<Column name="Instance_ID" value="57"/>
+			<Extension Diagram_ID="{75BF1117-E279-482a-8712-C9BA234D0490}" Object_ID="{0D7D3E3A-30E8-4458-A448-A37C061E5357}"/>
+		</Row>
+	</Table>
+	<Table name="t_diagramlinks">
+		<Row>
+			<Column name="DiagramID" value="9"/>
+			<Column name="ConnectorID" value="65"/>
+			<Column name="Geometry" value="SX=0;SY=0;EX=0;EY=0;EDGE=3;$LLB=CX=19:CY=15:OX=0:OY=2:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;LLT=CX=35:CY=15:OX=-1:OY=2:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;LMT=CX=65:CY=15:OX=-37:OY=6:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=1:ROT=0;LMB=;LRT=CX=34:CY=15:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;LRB=CX=19:CY=15:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;IRHS=;ILHS=;"/>
+			<Column name="Style" value="Mode=3;EOID=B76685B2;SOID=267DA7E2;Color=-1;LWidth=0;"/>
+			<Column name="Hidden" value="FALSE"/>
+			<Column name="Instance_ID" value="31"/>
+			<Extension DiagramID="{75BF1117-E279-482a-8712-C9BA234D0490}" ConnectorID="{5A26AA80-8366-4310-8E91-A3DF17B7A81B}"/>
+		</Row>
+		<Row>
+			<Column name="DiagramID" value="9"/>
+			<Column name="ConnectorID" value="66"/>
+			<Column name="Geometry" value="SX=-6;SY=-2;EX=-57;EY=-2;EDGE=2;$LLB=CX=19:CY=15:OX=7:OY=3:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;LLT=CX=35:CY=15:OX=5:OY=1:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;LMT=CX=65:CY=15:OX=-4:OY=-16:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=1:ROT=0;LMB=;LRT=CX=35:CY=15:OX=-4:OY=-2:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=2:DIR=0:ROT=0;LRB=CX=19:CY=15:OX=-6:OY=3:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;IRHS=;ILHS=;"/>
+			<Column name="Style" value="Mode=3;EOID=850C12CA;SOID=267DA7E2;Color=-1;LWidth=0;"/>
+			<Column name="Hidden" value="FALSE"/>
+			<Column name="Instance_ID" value="32"/>
+			<Extension DiagramID="{75BF1117-E279-482a-8712-C9BA234D0490}" ConnectorID="{319ED4E7-1A3B-47d0-B317-2BB86A5DAB64}"/>
+		</Row>
+	</Table>
+</Package>

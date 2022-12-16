@@ -1,0 +1,137 @@
+<Structure>
+	<KnowledgeBase>
+		<ID>29002978672</ID>
+		<Name>База знаний 2</Name>
+		<ShortName>Baza-znaniy-2</ShortName>
+		<Kind>0</Kind>
+		<Description></Description>
+		<Vars/>
+		<Templates>
+			<Template>
+				<ID>T001</ID>
+				<Name>Окружающая среда</Name>
+				<ShortName>Okruzhayushchaya-sreda</ShortName>
+				<Description>Описание шаблона T001</Description>
+				<PackageName></PackageName>
+				<RootPackageName></RootPackageName>
+				<DrawParams>xT001=15
+				yT001=15
+				w=152
+				h=65
+				</DrawParams>
+				<Slots>
+					<Slot>
+						<Name>Погода</Name>
+						<ShortName>Pogoda</ShortName>
+						<Description>Это погода</Description>
+						<Value></Value>
+						<DataType>String</DataType>
+						<Constraint></Constraint>
+					</Slot>
+					<Slot>
+						<Name>Ветер</Name>
+						<ShortName>Veter</ShortName>
+						<Description>Это ветер</Description>
+						<Value></Value>
+						<DataType>String</DataType>
+						<Constraint></Constraint>
+					</Slot>
+				</Slots>
+			</Template>
+			<Template>
+				<ID>T002</ID>
+				<Name>Явления</Name>
+				<ShortName>Yavleniya</ShortName>
+				<Description>Описание шаблона T002</Description>
+				<PackageName></PackageName>
+				<RootPackageName></RootPackageName>
+				<DrawParams>xT002=15
+				yT002=15
+				w=212
+				h=65
+				</DrawParams>
+				<Slots>
+					<Slot>
+						<Name>Аномальные</Name>
+						<ShortName>Anomalnye</ShortName>
+						<Description>Наличие аномальных явлений (да/нет)</Description>
+						<Value></Value>
+						<DataType>String</DataType>
+						<Constraint></Constraint>
+					</Slot>
+					<Slot>
+						<Name>Псевдоаномальные</Name>
+						<ShortName>Psevdoanomalnye</ShortName>
+						<Description>Наличие псевдоаномалий</Description>
+						<Value></Value>
+						<DataType>String</DataType>
+						<Constraint></Constraint>
+					</Slot>
+				</Slots>
+			</Template>
+		</Templates>
+		<Facts>
+			<Fact>
+				<ID>F001</ID>
+				<Name>Окружающая среда</Name>
+				<ShortName>Okruzhayushchaya-sreda</ShortName>
+				<Mode>1</Mode>
+				<Description>Окружающая среда</Description>
+				<PackageName></PackageName>
+				<RootPackageName></RootPackageName>
+				<DrawParams>xF001=15
+				yF001=15
+				w=178
+				h=57
+				</DrawParams>
+				<Slots>
+					<Slot>
+						<Name>Погода</Name>
+						<ShortName>Pogoda</ShortName>
+						<Description></Description>
+						<Value>плохо</Value>
+						<DataType>String</DataType>
+						<Constraint></Constraint>
+					</Slot>
+					<Slot>
+						<Name>Ветер</Name>
+						<ShortName>Veter</ShortName>
+						<Description></Description>
+						<Value>есть</Value>
+						<DataType>String</DataType>
+						<Constraint></Constraint>
+					</Slot>
+				</Slots>
+			</Fact>
+		</Facts>
+		<GRules>
+			<GRule>
+				<ID>G001</ID>
+				<Name>Шаблон-правила-G001</Name>
+				<ShortName>Shablon-pravila-G001</ShortName>
+				<Description>Описание шаблона правила G001</Description>
+				<PackageName></PackageName>
+				<RootPackageName></RootPackageName>
+				<DrawParams>xG001=26
+				yG001=105
+				w=170
+				h=34
+				</DrawParams>
+				<Conditions>
+					<C0>Okruzhayushchaya-sreda</C0>
+				</Conditions>
+				<Actions>
+					<A0>Yavleniya</A0>
+				</Actions>
+			</GRule>
+		</GRules>
+		<Rules/>
+		<Functions/>
+		<Tasks/>
+		<FScales/>
+		<TempPackageList/>
+		<FactPackageList/>
+		<RulePackageList/>
+		<GRulePackageList/>
+	</KnowledgeBase>
+</Structure>

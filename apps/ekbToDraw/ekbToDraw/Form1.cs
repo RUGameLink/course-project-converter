@@ -19,6 +19,8 @@ namespace ekbToDraw
         string pathToDid; //Путь к директории
         bool status = false;
 
+        string drawText = "";
+
         //Листы объектов классов
         List<EKB> ekb;
         List<Association> associations;
@@ -90,7 +92,7 @@ namespace ekbToDraw
         private void convertBtn_Click(object sender, EventArgs e)
         {
             parseTheFile();
-        //    convertToEKB();
+            convertToDraw(); //Метод преобразования файла в формат EKB
             if (status)
             {
         //        saveToEkb();
@@ -165,6 +167,11 @@ namespace ekbToDraw
                 status = false;
                 return;
             }
+        }
+
+        private void convertToDraw() //Метод преобразования файла в формат EKB
+        {
+
         }
     }
 }
