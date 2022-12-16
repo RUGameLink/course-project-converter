@@ -1,0 +1,11 @@
+D:\.git\course-project-converter\apps\ekbToDraw\ekbToDraw\obj\Debug\ekbToDraw.csproj.AssemblyReference.cache
+D:\.git\course-project-converter\apps\ekbToDraw\ekbToDraw\obj\Debug\ekbToDraw.csproj.SuggestedBindingRedirects.cache
+D:\.git\course-project-converter\apps\ekbToDraw\ekbToDraw\obj\Debug\ekbToDraw.Form1.resources
+D:\.git\course-project-converter\apps\ekbToDraw\ekbToDraw\obj\Debug\ekbToDraw.Properties.Resources.resources
+D:\.git\course-project-converter\apps\ekbToDraw\ekbToDraw\obj\Debug\ekbToDraw.csproj.GenerateResource.cache
+D:\.git\course-project-converter\apps\ekbToDraw\ekbToDraw\obj\Debug\ekbToDraw.csproj.CoreCompileInputs.cache
+D:\.git\course-project-converter\apps\ekbToDraw\ekbToDraw\bin\Debug\ekbToDraw.exe.config
+D:\.git\course-project-converter\apps\ekbToDraw\ekbToDraw\bin\Debug\ekbToDraw.exe
+D:\.git\course-project-converter\apps\ekbToDraw\ekbToDraw\bin\Debug\ekbToDraw.pdb
+D:\.git\course-project-converter\apps\ekbToDraw\ekbToDraw\obj\Debug\ekbToDraw.exe
+D:\.git\course-project-converter\apps\ekbToDraw\ekbToDraw\obj\Debug\ekbToDraw.pdb

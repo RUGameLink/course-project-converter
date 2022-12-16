@@ -35,6 +35,7 @@
             this.convertBtn = new System.Windows.Forms.Button();
             this.fileNameText = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.fileImg)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pathImg)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -48,6 +49,7 @@
             this.fileBtn.TabIndex = 0;
             this.fileBtn.Text = "Выберите файл";
             this.fileBtn.UseVisualStyleBackColor = true;
+            this.fileBtn.Click += new System.EventHandler(this.fileBtn_Click);
             // 
             // pathBtn
             // 
@@ -57,6 +59,7 @@
             this.pathBtn.TabIndex = 1;
             this.pathBtn.Text = "Выберите место\n для сохранения";
             this.pathBtn.UseVisualStyleBackColor = true;
+            this.pathBtn.Click += new System.EventHandler(this.pathBtn_Click);
             // 
             // fileImg
             // 
@@ -82,6 +85,7 @@
             this.convertBtn.TabIndex = 4;
             this.convertBtn.Text = "Конвертировать";
             this.convertBtn.UseVisualStyleBackColor = true;
+            this.convertBtn.Click += new System.EventHandler(this.convertBtn_Click);
             // 
             // fileNameText
             // 
@@ -100,6 +104,10 @@
             this.groupBox1.TabIndex = 6;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Имя файла";
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
             // 
             // Form1
             // 
@@ -131,6 +139,7 @@
         private System.Windows.Forms.Button convertBtn;
         private System.Windows.Forms.TextBox fileNameText;
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
     }
 }
 
