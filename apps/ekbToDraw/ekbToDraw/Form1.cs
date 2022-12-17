@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -146,23 +147,34 @@ namespace ekbToDraw
                     //    return;
                     //}
                     var know = child.Item(0).ChildNodes;
+                    
+                    if(know.Item(6) == null)
+                    {
+                        return;
+                    }
                     var templates = know.Item(6).ChildNodes;
-                    for(int i = 0; i < templates.Count; i++)
+                    for (int i = 0; i < templates.Count; i++)
                     {
                         Attribute = new List<(string, string)>();
                         var template = templates[i];
                         className = template.ChildNodes[1].InnerText;
-                    //    MessageBox.Show(className);
                         var templateInside = template.ChildNodes;
+                        //    MessageBox.Show(className);
+                            var check = templateInside.Item(7);
+                            if(check == null)
+                            {
+                                return;
+                            }
+
                         var slots = templateInside.Item(7).ChildNodes;
-                        for(int j = 0; j < slots.Count; j ++)
-                        {
-                            var slot = slots[j];
-                            attr = slot.ChildNodes[0].InnerText;
-                            typeText = slot.ChildNodes[4].InnerText;
-                            Attribute.Add((attr, typeText));
-                        }
-                        ekb.Add(new EKB(className, Attribute));
+                                for (int j = 0; j < slots.Count; j++)
+                                {
+                                    var slot = slots[j];
+                                    attr = slot.ChildNodes[0].InnerText;
+                                    typeText = slot.ChildNodes[4].InnerText;
+                                    Attribute.Add((attr, typeText));
+                                }
+                                ekb.Add(new EKB(className, Attribute));
                     }
                     var grules = know.Item(8).ChildNodes;
                     for(int i = 0; i < grules.Count; i++)
