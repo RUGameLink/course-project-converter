@@ -1,0 +1,14 @@
+class Cat
+{
+  Name;
+  int Age;
+  Color;
+  * -- * Dog;
+}
+
+class Dog
+{
+  Name;
+  int Age;
+  Owner;
+}

@@ -141,11 +141,7 @@ namespace ekbToDraw
                 if (xRoot != null) //Проверка корня файла на пустоту
                 {
                     var child = xRoot.ChildNodes; //Начало парсинга
-                    //if (child.Item(1) == null)
-                    //{
-                    //    status = false;
-                    //    return;
-                    //}
+
                     var know = child.Item(0).ChildNodes;
                     
                     if(know.Item(6) == null)
@@ -159,7 +155,6 @@ namespace ekbToDraw
                         var template = templates[i];
                         className = template.ChildNodes[1].InnerText;
                         var templateInside = template.ChildNodes;
-                        //    MessageBox.Show(className);
                             var check = templateInside.Item(7);
                             if(check == null)
                             {
@@ -235,14 +230,11 @@ namespace ekbToDraw
                 getClassName(ekb[i].ClassName);
                 for (int j = 0; j < ekb[i].Attribute.Count; j++)
                 {
-                    //   var insideCount = count;
-                    
                     var paramText = $"\r\n<mxCell id=\"x-kl-r7OIvYpWUdUMo4z-{count}\" value=\"- {ekb[i].Attribute[j].Item1}: {ekb[i].Attribute[j].Item2}\" style=\"text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;\" vertex=\"1\" parent=\"{deepId}\">" +
                         $"\r\n          <mxGeometry y=\"{paramCount}\" width=\"140\" height=\"26\" as=\"geometry\" />" +
                         $"\r\n</mxCell>";
                     count++;
                     paramCount += 26;
-                   // count = insideCount;
                     drawText += paramText;
                 }
             }

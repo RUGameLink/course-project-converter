@@ -1,0 +1,17 @@
+
+class EA
+Assotiation;
+Attribute;
+EntityItem;
+}
+class EKB
+fact;
+action;
+rule;
+}
+class Form1
+pathToFile;
+pathToSave;
+* -- * EA;
+* -- * EKB;
+}

@@ -1,0 +1,27 @@
+
+class EKB
+{
+Facts;
+Action;
+Rules;
+}
+class Umple
+{
+Class;
+Rules;
+Possition;
+}
+class EKBCopy
+{
+Facts;
+Action;
+Rules;
+* -- * EKB;
+}
+class Form1
+{
+FIleWay;
+SaveWay;
+* -- * EKB;
+* -- * Umple;
+}
